@@ -19,6 +19,7 @@ We talk about gathering and modifying user and account information in [Account.m
 
 Order related functions (placing, cancelling, listing previous orders, etc.) are in [Order.md](Order.md).
 
+Bank Accounts & ACH Transfers are covered in [Banking.md](Banking.md).
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 # Introduction
