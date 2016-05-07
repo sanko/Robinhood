@@ -13,6 +13,8 @@ For methods related to user authentication, password recovery, etc. see [Authent
 
 Stock quotes are covered in [Quote.md](Quote.md).
 
+Watchlists management is described in [Watchlist.md](Watchlist.md).
+
 # Introduction
 
 [Robinhood](http://robinhood.com/) is a free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
