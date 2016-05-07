@@ -1,4 +1,4 @@
-# Unofficial Robinhood API Docs
+# Unofficial Documentation of Robinhood Trade's Private API
 
 Table of Contents:
 
@@ -9,13 +9,15 @@ Table of Contents:
 - [Pagination](#pagination)
 	- [Semi-Pagination](#semi-pagination)
 
+For methods related to user authentication, password recovery, etc. see [Authentication.md](Authentication.md).
+
 # Introduction
 
 [Robinhood](http://robinhood.com/) is a free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
 
 Before I go too far, I must say that this is a big messy work in progress. I'll continue to update this as I figure more out. Sections marked TODO are in my head but I haven't found the time to describe them yet. Work in progress and all.
 
-Oh, and I do not work with or for Robinhood Finacial, LLC. But if they're hiring and see this, [here is my CV](https://s-media-cache-ak0.pinimg.com/736x/5a/7f/94/5a7f94bdb5b359139f5def6870c33466.jpg).
+Oh, and I do not work with or for Robinhood Finacial, LLC.
 
 # API Security
 
