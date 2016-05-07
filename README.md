@@ -17,6 +17,8 @@ Watchlists management is described in [Watchlist.md](Watchlist.md).
 
 We tack about gathering and modifying user and account information in [Account.md](Account.md).
 
+Order related functions (placing, cancelling, listing previous orders, etc.) are in [Order.md](Order.md).
+
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 # Introduction
@@ -34,9 +36,9 @@ The HTTPS protocol is used to access the Robinhood API. Transactions require sec
 Calls to API endpoints make use of two different levels of authentication:
 
 1. **None**: No authentication. Anyone can query the method.
-2. **Token**: Requires an authorization token generated with a call to [log in](#log-in).
+2. **Token**: Requires an authorization token generated with a call to [log in](Authenticatin.md#log-in).
 
-Calls which require no authentication are generally informational ([quote gathering](#quote-methods), [securities lookup](#instrument-methods), etc.).
+Calls which require no authentication are generally informational ([quote gathering](Quote.md#quote-methods), [securities lookup](#instrument-methods), etc.).
 
 Authorized calls require an `Authorization` HTTP Header with the authentication type set as `Token` (Example: `Authorization: Token 40charauthozationtokenherexxxxxxxxxxxxxx`).
 
