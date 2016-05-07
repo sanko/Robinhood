@@ -1,5 +1,10 @@
 # Authentication Methods
 
+- [Logging in](#logging-in)
+- [Logging out](#logging-out)
+- [Password Reset Request](#password-reset-request)
+- [Password Reset](#password-reset)
+
 Most calls to the API will require an authorization token. After logging in, you should store the token in a secure way for future calls without forcing users to log in again.
 
 ## Logging in
