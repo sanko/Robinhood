@@ -11,6 +11,8 @@ Table of Contents:
 
 For methods related to user authentication, password recovery, etc. see [Authentication.md](Authentication.md).
 
+Stock quotes are covered in [Quote.md](Quote.md).
+
 # Introduction
 
 [Robinhood](http://robinhood.com/) is a free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
