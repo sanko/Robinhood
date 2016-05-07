@@ -15,6 +15,10 @@ Stock quotes are covered in [Quote.md](Quote.md).
 
 Watchlists management is described in [Watchlist.md](Watchlist.md).
 
+We tack about gathering and modifying user and account information in [Account.md](Account.md).
+
+Things I have yet to organize are in [Unsorted.md](Unsorted.md)
+
 # Introduction
 
 [Robinhood](http://robinhood.com/) is a free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
