@@ -1,5 +1,16 @@
 # User Information Methods
 
+- [Gather Basic User Info](#gather-basic-user-info)
+- [Gather the Account ID](#gather-the-account-id)
+- [Gather Basic Information About the Account Holder](#gather-basic-information-about-the-account-holder)
+- [Account Holder's Affiliation Information](#account-holders-affiliation-information)
+- [Gather Employment Data About the Account Holder](#gather-employment-data-about-account-holder)
+- [Gather Investment Profile Data About the Account Holder](#gather-investment-profile-data-about-the-account-holder)
+- [Gather Verifiable User Information](#gather-verifiable-user-information)
+- [Get the Customer Identification Program Questions](#get-the-customer-identification-program-questions)
+- [Answer Customer Identification Program Questions](#answer-customer-identification-program-questions)
+- [Update User Information](#update-user-information)
+
 Now that you're [logged in](Authentication.md#logging-in), you'll probably want to get to know yourself a little bit. Here we go...
 
 Most account API calls require an `account_id` so the service knows which of your accounts to act on. You'll need to [gather the list of accounts](#gather-list-of-accounts) to get their `account_id`.
@@ -597,3 +608,12 @@ _Untested_
 - Submit Investment Profile		`PUT /user/investment_profile/`
 - Get Application By Type		`GET /applications/$type/`
 - Get Applications				`GET /applications/`
+- Account Application			PUT  /applications/individual/		???
+- Upgrade To Margin				POST /margin/upgrades/						???
+- Get Instant Eligibility		GET /midlands/permissions/instant/
+- Get Recent Day Trades			GET /accounts/$id/recent_day_trades/?cursor=$cursor
+- Get Day Trade Check			GET /accounts/$id/day_trade_checks/?instrument=$id
+- Get Margin Settings			GET /settings/margin/$accountNumber/
+- Update Day Trade Setting      PATCH /settings/margin/{acctNumber}/            {$margin_settings}
+- Get Margin Upgrades			GET /margin/upgrades/
+- Get Account					GET /accounts/$id/

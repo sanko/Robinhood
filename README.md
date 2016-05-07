@@ -9,17 +9,18 @@ Table of Contents:
 - [Pagination](#pagination)
 	- [Semi-Pagination](#semi-pagination)
 
-For methods related to user authentication, password recovery, etc. see [Authentication.md](Authentication.md).
+## See also
 
-Stock quotes are covered in [Quote.md](Quote.md).
+- [Authentication.md](Authentication.md) for methods related to user authentication, password recovery, etc.
+- [Banking.md](Banking.md) for bank accounts & ACH transfers methods
+- [Order.md](Order.md) for order-related functions (placing, cancelling, listing previous orders, etc.)
+- [Quote.md](Quote.md) for stock quotes
+- [Watchlist.md](Watchlist.md) for watchlists management
+- [Account.md](Account.md) talks about gathering and modifying user and account information
+- [Settings.md](Settings.md) covers notifications and other settings
+- [Markets.md](Markets.md) describes the API for getting basic info about specific exchanges themselves
+- [Referrals.md](Referrals.md) is all about account referrals
 
-Watchlists management is described in [Watchlist.md](Watchlist.md).
-
-We talk about gathering and modifying user and account information in [Account.md](Account.md).
-
-Order related functions (placing, cancelling, listing previous orders, etc.) are in [Order.md](Order.md).
-
-Bank Accounts & ACH Transfers are covered in [Banking.md](Banking.md).
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 # Introduction
