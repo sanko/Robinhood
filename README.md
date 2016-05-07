@@ -15,7 +15,7 @@ Stock quotes are covered in [Quote.md](Quote.md).
 
 Watchlists management is described in [Watchlist.md](Watchlist.md).
 
-We tack about gathering and modifying user and account information in [Account.md](Account.md).
+We talk about gathering and modifying user and account information in [Account.md](Account.md).
 
 Order related functions (placing, cancelling, listing previous orders, etc.) are in [Order.md](Order.md).
 
