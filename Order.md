@@ -130,14 +130,34 @@ See the response to [placing an order](#place-an-order).
 
 See the response sample to [placing an order](#place-an-order).
 
-**WIP***
+**WIP**
 
 ```
 {
    "updated_at":"2016-06-02T13:24:13.156344Z",
    "ref_id":null,
    "time_in_force":"gfd",
-   "fees":"0.00","cancel":"https:\/\/api.robinhood.com\/orders\/11b78aef-a6f9-4f53-8aa5-108c6235ee75\/cancel\/","id":"11b78aef-a6f9-4f53-8aa5-108c6235ee75","cumulative_quantity":"0.00000","stop_price":"30.06000000","reject_reason":null,"instrument":"https:\/\/api.robinhood.com\/instruments\/39ff611b-84e7-425b-bfb8-6fe2a983fcf3\/","state":"confirmed","trigger":"stop","type":"limit","last_transaction_at":"2016-06-02T13:24:13.134000Z","price":"30.06000000","executions":[],"extended_hours":false,"account":"https:\/\/api.robinhood.com\/accounts\/5QY29322\/","url":"https:\/\/api.robinhood.com\/orders\/11b78aef-a6f9-4f53-8aa5-108c6235ee75\/","created_at":"2016-06-02T00:38:04.215291Z","side":"sell","position":"https:\/\/api.robinhood.com\/positions\/5QY29322\/39ff611b-84e7-425b-bfb8-6fe2a983fcf3\/","average_price":null,"quantity":"1.00000"
+   "fees":"0.00",
+   "cancel":"https:\/\/api.robinhood.com\/orders\/11b78aef-a6f9-4f53-8aa5-108c6235ee75\/cancel\/",
+   "id":"11b78aef-a6f9-4f53-8aa5-108c6235ee75",
+   "cumulative_quantity":"0.00000",
+   "stop_price":"30.06000000",
+   "reject_reason":null,
+   "instrument":"https:\/\/api.robinhood.com\/instruments\/39ff611b-84e7-425b-bfb8-6fe2a983fcf3\/",
+   "state":"confirmed",
+   "trigger":"stop",
+   "type":"limit",
+   "last_transaction_at":"2016-06-02T13:24:13.134000Z",
+   "price":"30.06000000",
+   "executions":[],
+   "extended_hours":false,
+   "account":"https:\/\/api.robinhood.com\/accounts\/5QY29322\/",
+   "url":"https:\/\/api.robinhood.com\/orders\/11b78aef-a6f9-4f53-8aa5-108c6235ee75\/",
+   "created_at":"2016-06-02T00:38:04.215291Z",
+   "side":"sell",
+   "position":"https:\/\/api.robinhood.com\/positions\/5QY29322\/39ff611b-84e7-425b-bfb8-6fe2a983fcf3\/",
+   "average_price":null,
+   "quantity":"1.00000"
 }
 ```
 
