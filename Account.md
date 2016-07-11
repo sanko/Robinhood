@@ -43,52 +43,73 @@ A [paginated](#pagination) list of accounts is returned. Accounts contain the fo
 
 | Key                           | Type     | Description |
 |-------------------------------|----------|-------------|
-| deactivated      				| Boolean  | Not sure what Robinhood would deactivate an account for but apparently they have the option |
-| updated_at       				| ISO 8601 | Last time the account was modified. I presume this includes cash amount changes as well. |
+| deactivated      				| Boolean  | Whether the account has been deactivated |
+| updated_at       				| ISO 8601 | Last time the account was modified |
 | margin_balances  				| Hash     | See below |
-| portfolio        				| URL      | This URL is the endpoint for this account's portfolio. Wow, I know. |
+| portfolio        				| URL      | Endpoint for this portfolio |
 | cash_balances    				| Hash     | See below |
-| withdrawl_halted 			    | Boolean  | Has the most recent attempt to withdrawl cash been stopped |
+| withdrawl_halted 			    | Boolean  | Has the most recent attempt to withdraw cash been stopped? |
 | cash_available_for_withdrawal | Float    | Amount of money on hand you may withdrawal to your back via ACH |
-| type             				| String   | If normal Robinhood accounts would be `cash` but Instant accounts would obviously be `margin` |
-| sma 							| Unknown  | `null` for me so I have no idea how it'l be presented. Should be a Boolean? |
+| type             				| String   | `cash` for Normal accounts, `margin` for Instant accounts |
+| sma 							| Float    | Special memorandum account funds available. `null` for cash accounts |
 | sweep_enabled					| Boolean  | |
 | deposit_halted				| Boolean  | |
-| buying_power 					| Float    | Amount of cash on hand for purchasing securities (T+3 settled funds not being held for orders) |
+| buying_power 					| Float    | Amount of cash available to purchase securities (up to your margin limit). On a cash account, it is equal to the amount of settled funds. |
 | user 							| URL      | Link back to the basic [user data endpoint](#gather-basic-user-info) |
-| max_ach_early_access_amount	| Float    | Amount of cash you may use before the actual transfer completes (Instant account perhaps?) |
-| cash_held_for_orders 			| Float    | This is the total amount of money marked for use in outstanding buy orders. |
-| only_position_closing_trades  | Boolean  | Google 'investopedia close position' |
+| max_ach_early_access_amount	| Float    | Amount of cash you may use before the actual transfer completes. Instant accounts have early access to a certain amount of funds, although this also applies to the first $1,000 worth of deposits into the account as well. |
+| cash_held_for_orders 			| Float    | Amount of cash in outstanding buy orders. |
+| only_position_closing_trades  | Boolean  |  Google 'investopedia close position' |
 | url 							| URL 	   | Endpoint where more information about this account may be grabbed |
 | positions						| URL 	   | Endpoint where you may grab the past/current positions held by this account |
-| created_at					| ISO 8601 | When was the account created |
+| created_at					| ISO 8601 | Date this account was created |
 | cash 							| Float    | Amount of cash including unsettled funds |
-| sma_held_for_orders 			| Unknown  | Google 'investopedia "special memorandum account"' |
-| account_number                | String   | The actual alphanumeric string Robinhood uses to identify this account |
+| sma_held_for_orders 			| Float    | Special memorandum account funds held for orders. `null` for cash accounts |
+| account_number                | String   | The alphanumeric string Robinhood uses to identify this account |
 | uncleared_deposits            | Float    | Amount of money in transet from an inconplete ACH deposit |
-| unsettled_funds               | Float    | Amount of money being held in statis thanks to the SEC's T+3 anti-fun rule |
+| unsettled_funds               | Float    | Amount of money in unsettled funds |
 
 **`cash_balances`**
 
-This is a hash with the following keys... A lot of these are copies of data found in the account object itself though... just, FYI...
+If the account type is not cash this value is `null`.
 
-| Key             | Type     | Description |
-|-----------------|----------|-------------|
-| cash_held_for_orders | Float  | This is the total amount of money marked for use in outstanding buy orders. |
-| created_at      | ISO 8601 | When was the cash account created |
-| cash | Float     | Amount of cash including unsettled funds |
-| buying_power | Float | Amount of cash on hand for purchasing securities (T+3 settled funds not being held for orders) |
-| updated_at       | ISO 8601      | When any of the values of `cash_balances` was last changed |
-| cash_available_for_withdrawl   | Float   | Amount of cash on hand you may transfer to your connected ACH account |
-| uncleared_deposits | Float | Value of all initiated ACH transfers which have not completed |
-| unsettled_funds | Float | Amount of money being held in statis thanks to SEC's T+3 anti-fun rule |
+| Key                                    | Type     | Description |
+|----------------------------------------|----------|-------------|
+| cash_held_for_orders                   | Float    | This is the total amount of money marked for use in outstanding buy orders. |
+| created_at                             | ISO 8601 | When was the cash account created |
+| cash                                   | Float    | Amount of cash including unsettled funds |
+| buying_power                           | Float    | Amount of cash on hand for purchasing securities (T+3 settled funds not being held for orders) |
+| updated_at                             | ISO 8601 | When any of the values of `cash_balances` was last changed |
+| cash_available_for_withdrawl           | Float    | Amount of cash on hand you may transfer to your connected ACH account |
+| uncleared_deposits                     | Float    | Value of all initiated ACH transfers which have not completed |
+| unsettled_funds                        | Float    | Amount of money being held in statis thanks to SEC's T+3 anti-fun rule |
 
 **`margin_balances`**
 
-_I assume this is a hash much like `cash_balances` but I do not have an Instant account yet so it's simply `null`_
+If the account type is not margin this value is `null`.
+
+| Key                                    | Type     | Description |
+|----------------------------------------|----------|-------------|
+| day_trade_buying_power                 | Float    | This is the total amount of money marked for use in outstanding and new buy orders. This value is readjusted before the start of each trading day. |
+| created_at                             | ISO 8601 | When was the margin account created |
+| overnight_buying_power_held_for_orders | Float    | How much overnight buying power is held for orders |
+| cash_held_for_orders                   | Float    | How much cash is held for orders |
+| day_trade_buying_power_held_for_orders | Float    | How much day trade buyign power is held for orders |
+| marked_pattern_day_trader_date         | ISO 8601 | Date which the account was flagged as a pattern day trader (PDT), `null` otherwise |
+| cash                                   | Float    | Amount of cash including unsettled funds |
+| unallocated_margin_cash                | Float    | Amount of unallocated margin cash on hand for purchasing securities |
+| updated_at                             | ISO 8601 | Date the values were last updated. This is generally updated when an order is placed, and/or deposits/withdrawals made. |
+| cash_available_for_withdrawal          | Float    | Amount of cash available for withdrawal |
+| margin_limit                           | Float    | Maximum amount of money you can borrow. Robinhood Instant has 0 |
+| overnight_buying_power                 | Float    | How much buying power is available for the next day |
+| uncleared_deposits                     | Float    | Amount of money in uncleared deposits |
+| unsettled_funds                        | Float    | Amount of money in unsettled funds from trades |
+| day_trade_ratio                        | Float    | |
+| overnight_ratio                        | Float    | |
+
 
 **Response sample**
 
+For Normal accounts:
 ```
 {
 	"next": null,
@@ -129,6 +150,55 @@ _I assume this is a hash much like `cash_balances` but I do not have an Instant 
     	"unsettled_funds": "100.0000"
 	}]
 }
+```
+
+For Instant accounts:
+```
+{
+	"previous": null,
+	"results": [{
+		"deactivated": false,
+		"updated_at": "2016-04-13T17:04:30.664674Z",
+		"margin_balances": {
+			"day_trade_buying_power": "1644.8050",
+			"created_at": "2016-04-13T17:04:30.653404Z",
+			"overnight_buying_power_held_for_orders": "0.0000",
+			"cash_held_for_orders": "0.0000",
+			"day_trade_buying_power_held_for_orders": "0.0000",
+			"marked_pattern_day_trader_date": null,
+			"cash": "421.4100",
+			"unallocated_margin_cash": "612.3900",
+			"updated_at": "2016-06-30T17:25:44.637401Z",
+			"cash_available_for_withdrawal": "421.4100",
+			"margin_limit": "0.0000",
+			"overnight_buying_power": "612.3900",
+			"uncleared_deposits": "0.0000",
+			"unsettled_funds": "190.9800",
+			"day_trade_ratio": "0.25",
+			"overnight_ratio": "1.00"
+		},
+		"portfolio": "https:\/\/api.robinhood.com\/accounts\/8UD09348\/portfolio\/",
+		"cash_balances": null,
+		"withdrawal_halted": false,
+		"cash_available_for_withdrawal": "421.4100",
+		"type": "margin",
+		"sma": "1629.2600",
+		"sweep_enabled": true,
+		"deposit_halted": false,
+		"buying_power": "1629.2600",
+		"user": "https:\/\/api.robinhood.com\/user\/",
+		"max_ach_early_access_amount": "1000.00",
+		"cash_held_for_orders": "0.0000",
+		"only_position_closing_trades": false,
+		"url": "https:\/\/api.robinhood.com\/accounts\/8UD09348\/",
+		"positions": "https:\/\/api.robinhood.com\/accounts\/8UD09348\/positions\/",
+    	"created_at": "2016-03-12T01:98:27.672943Z",
+		"cash": "421.4100",
+		"sma_held_for_orders": "0.0000",
+		"account_number": "8UD09348",
+		"uncleared_deposits": "0.0000",
+		"unsettled_funds": "190.9800"
+	}
 ```
 
 # Gather Basic User Info
