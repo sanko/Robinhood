@@ -27,13 +27,13 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 [Robinhood](http://robinhood.com/) is a free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
 
-Before I go too far, I must say that this is a big messy work in progress. I'll continue to update this as I figure more out. Sections marked TODO are in my head but I haven't found the time to describe them yet. Work in progress and all.
+Before I go too far, I must say that this is a big, messy work in progress. I'll continue to update this as I figure more out. Sections marked TODO are in my head but I haven't found the time to describe them yet. Work in progress and all.
 
 Oh, and I do not work with or for Robinhood Finacial, LLC.
 
 # API Security
 
-The HTTPS protocol is used to access the Robinhood API. Transactions require security because most calls transmit actual account informaion. SSL Pinning in used in the official Android and IOS apps to prevent MITM attacks; you would be wise to do the same at the very least.
+The HTTPS protocol is used to access the Robinhood API. Transactions require security because most calls transmit actual account informaion. SSL Pinning is used in the official Android and iOS apps to prevent MITM attacks; you would be wise to do the same at the very least.
 
 Calls to API endpoints make use of two different levels of authentication:
 
