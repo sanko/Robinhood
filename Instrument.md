@@ -6,7 +6,7 @@
 
 # Grab a List of All Instruments
 
-This returns a paginated list of all instruments tracked by Robinhood's partners sorted by their list date. You get everything with this: OTC, NASDAQ CM,
+This returns a paginated list of all instruments tracked by Robinhood's partners sorted by their list date. You get everything with this: OTC, NASDAQ CM, ... There are currently 99 pages, 9,825 instruments in total, and 7197 are tradeable with Robinhood.
 
 **Method**
 
