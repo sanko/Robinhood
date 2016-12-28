@@ -15,6 +15,7 @@ Table of Contents:
 - [Banking.md](Banking.md) for bank accounts & ACH transfers methods
 - [Order.md](Order.md) for order-related functions (placing, cancelling, listing previous orders, etc.)
 - [Quote.md](Quote.md) for stock quotes
+- [Instrument.md](Instrument.md) for internal reference to financial instruments
 - [Watchlist.md](Watchlist.md) for watchlists management
 - [Account.md](Account.md) talks about gathering and modifying user and account information
 - [Settings.md](Settings.md) covers notifications and other settings

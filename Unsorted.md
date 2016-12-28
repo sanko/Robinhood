@@ -27,6 +27,11 @@ These are the little news snippets you find under your chart on the main screen
 - Reorder Positions				GET /positions/?ordering=$ordering
 
 
+# Quote Data
+
+- Get Fundamental Info			GET /fundamentals/$symbol/
+
+
 # List Portfolios
 
 List your Portfolios
@@ -56,8 +61,8 @@ List your Portfolios
 **Request sample**
 
 ```
-curl -v https://api.robinhood.com/accounts/{account.number}/portfolio/     
-   -H "Accept: application/json"    
+curl -v https://api.robinhood.com/accounts/{account.number}/portfolio/
+   -H "Accept: application/json"
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```
 
@@ -109,13 +114,6 @@ Tax info and other docs are provided thought these endpoints
 - Get Document Download URL		GET /documents/$id/download/
 - Get Documents					GET /documents/
 - Mark Doc Request Uploaded		PATCH /upload/document_request/$rhid/?state=$state
-
-# Instruments
-
-Basic Symbol search
-
-- Query Instruments				GET /instruments/?query=$query
-- Get Fundamental Info			GET /fundamentals/$symbol/
 
 # Application Information
 

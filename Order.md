@@ -100,6 +100,7 @@ Fields are returned as well as the following:
     "quantity": "1.00000"
 }
 ```
+
 # Gather Order Information
 
 This returns the work status and related information.
