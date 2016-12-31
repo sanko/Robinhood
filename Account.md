@@ -39,7 +39,7 @@ curl -v https://api.robinhood.com/accounts/ \
 
 **Response**
 
-A [paginated](#pagination) list of accounts is returned. Accounts contain the following keys...
+A [paginated](README.md#pagination) list of accounts is returned. Accounts contain the following keys...
 
 | Key                           | Type     | Description |
 |-------------------------------|----------|-------------|
@@ -548,7 +548,7 @@ curl -v https://api.robinhood.com/user/identity_mismatch/ \
 
 **Response**
 
-This returns a [paginated list](#pagination) of data with the following results:
+This returns a [paginated list](README.md#pagination) of data with the following results:
 
 | Key   | Type   | Description |
 |-------|--------|-------------|
