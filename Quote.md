@@ -86,9 +86,10 @@ Returned data is semi-paginated (in that there are no `next` or `previous` keys)
 
 - Get Historical Quotes
 
-    GET /quotes/historicals/$symbol/?interval=$i&span=$s
-		{interval=5minute|10minute (required)
-		 span=week|day|
+    GET /quotes/historicals/$symbol/[?interval=$i&span=$s&bounds=$b]
+        interval=week|day|10minute|5minute|null(all)
+        span=day|week|year|5year|all
+        bounds=extended|regular|trading
 
 - Get Quotes
 
