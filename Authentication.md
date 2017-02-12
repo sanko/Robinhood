@@ -11,6 +11,8 @@ Most calls to the API will require an authorization token. After logging in, you
 
 If you plan to do much beyond requesting [quote data](#quote-methods), you'll need to log in and use the authorization token. Once generated, all log ins to your account are given the same token until you [log out](#logging-out).
 
+### No Multi-factor authentication (MFA)
+
 **Method**
 
 | URI                               | HTTP Method | Authentication |
@@ -30,6 +32,84 @@ If you plan to do much beyond requesting [quote data](#quote-methods), you'll ne
 curl -v https://api.robinhood.com/api-token-auth/ \
    -H "Accept: application/json" \
    -d "username={username}&password={password}"
+```
+
+**Response**
+
+| Key   | Type   |Description|
+|-------|--------|-----------|
+| token | String | The authorization token you must pass to all calls which require authentication |
+
+**Response sample**
+
+```
+{
+  "token": "a9a7007f890c790a30a0e0f0a7a07a0242354114"
+}
+```
+
+### Multi-factor authentication (MFA)
+
+#### Step 1
+
+**Method**
+
+| URI                               | HTTP Method | Authentication |
+|-----------------------------------|-------------|----------------|
+| api.robinhood.com/api-token-auth/ | POST        |	None           |
+
+**Fields**
+
+| Parameter | Type   | Description   | Default | Required |
+|-----------|--------|---------------|---------|----------|
+| username  | String | Your username | N/A     | **Yes**  |
+| password  | String | Uh, password  | N/A     | **Yes**  |
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/api-token-auth/ \
+   -H "Accept: application/json" \
+   -d "username={username}&password={password}"
+```
+
+**Response**
+
+| Key          | Type    | Description             |
+|--------------|---------|-------------------------|
+| mfa_type     | String  | MFA type                |
+| mfa_required | Boolean | whether MFA is required |
+
+**Response sample**
+
+```
+{
+  "mfa_type":"sms",
+  "mfa_required":true
+}
+```
+#### Step 2
+
+**Method**
+
+| URI                               | HTTP Method | Authentication |
+|-----------------------------------|-------------|----------------|
+| api.robinhood.com/api-token-auth/ | POST        |	None           |
+
+**Fields**
+
+| Parameter | Type   | Description   | Default | Required |
+|-----------|--------|---------------|---------|----------|
+| username  | String | Your username | N/A     | **Yes**  |
+| password  | String | Uh, password  | N/A     | **Yes**  |
+| mfa_code  | String | MFA code      | N/A     | **Yes**  |
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/api-token-auth/ \
+   -H "Accept: application/json" \
+   -d "username={username}&password={password}&mfa_code={mfa_code}"
 ```
 
 **Response**
