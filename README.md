@@ -15,6 +15,7 @@ Table of Contents:
 - [Banking.md](Banking.md) for bank accounts & ACH transfers methods
 - [Order.md](Order.md) for order-related functions (placing, cancelling, listing previous orders, etc.)
 - [Quote.md](Quote.md) for stock quotes
+- [Fundamentals.md](Fundamentals.md) for basic, fundamental data
 - [Instrument.md](Instrument.md) for internal reference to financial instruments
 - [Watchlist.md](Watchlist.md) for watchlists management
 - [Account.md](Account.md) talks about gathering and modifying user and account information
@@ -26,7 +27,7 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 # Introduction
 
-[Robinhood](http://robinhood.com/) is a free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
+[Robinhood](http://robinhood.com/) is a commission-free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
 
 Before I go too far, I must say that this is a big, messy work in progress. I'll continue to update this as I figure more out. Sections marked TODO are in my head but I haven't found the time to describe them yet. Work in progress and all.
 

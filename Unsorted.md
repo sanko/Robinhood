@@ -26,12 +26,6 @@ These are the little news snippets you find under your chart on the main screen
 - Get Positions					GET /accounts/{account_id}/positions/?nonzero=true&cursor=[$cursor]
 - Reorder Positions				GET /positions/?ordering=$ordering
 
-
-# Quote Data
-
-- Get Fundamental Info			GET /fundamentals/$symbol/
-
-
 # List Portfolios
 
 List your Portfolios
