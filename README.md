@@ -31,7 +31,7 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 Before I go too far, I must say that this is a big, messy work in progress. I'll continue to update this as I figure more out. Sections marked TODO are in my head but I haven't found the time to describe them yet. Work in progress and all.
 
-Oh, and I do not work with or for Robinhood Finacial, LLC.
+Oh, and I do not work with or for Robinhood Financial, LLC.
 
 # API Security
 
@@ -48,7 +48,7 @@ Authorized calls require an `Authorization` HTTP Header with the authentication 
 
 # API Error Reporting
 
-The API reports incorrect data or imporper use with HTTP staus codes and JSON objects returned as body content. Some that I've run into include:
+The API reports incorrect data or improper use with HTTP status codes and JSON objects returned as body content. Some that I've run into include:
 
 | HTTP Status | Key                | Value | What I Did Wrong |
 |-------------|--------------------|-------|------------------|
