@@ -141,7 +141,7 @@ Every client that [logs in](#log-in) with your username/password is given the sa
 ```
 curl -v https://api.robinhood.com/api-token-logout/ \
    -H "Accept: application/json" \
-   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114" \
    -d ""
 ```
 

@@ -40,7 +40,7 @@ The HTTPS protocol is used to access the Robinhood API. Transactions require sec
 Calls to API endpoints make use of two different levels of authentication:
 
 1. **None**: No authentication. Anyone can query the method.
-2. **Token**: Requires an authorization token generated with a call to [log in](Authenticatin.md#log-in).
+2. **Token**: Requires an authorization token generated with a call to [log in](Authentication.md#logging-in).
 
 Calls which require no authentication are generally informational ([quote gathering](Quote.md#quote-methods), [securities lookup](#instrument-methods), etc.).
 
