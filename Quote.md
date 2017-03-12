@@ -40,6 +40,8 @@ You can gather quote data for a list of symbols at once by handing the bare `/qu
 
 Returned data is semi-paginated (in that there are no `next` or `previous` keys) and looks a lot like this call to `https://api.robinhood.com/quotes/?symbols=MSFT,FB,TSLA`.
 
+Note: The maximum number of symbols that can be defined per call is 1630.  Anything about that number will cause a HTTP 414 error.
+
     { "results": [{
             "ask_price": "54.1100",
             "ask_size": 1200,
