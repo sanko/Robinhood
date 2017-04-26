@@ -25,6 +25,8 @@ If you plan to do much beyond requesting [quote data](#quote-methods), you'll ne
 |-----------|--------|---------------|---------|----------|
 | username  | String | Your username | N/A     | **Yes**  |
 | password  | String | Uh, password  | N/A     | **Yes**  |
+> Must use `application/x-www-form-urlencoded` format.  
+> [Node.js example](https://github.com/mzabriskie/axios#nodejs)
 
 **Request sample**
 
