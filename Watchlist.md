@@ -47,7 +47,7 @@ Fields are returned as a hash with the following keys:
 
 ```
 {
-	"url": "https://api.robinhood.com/watchlists/Technology/",
+    "url": "https://api.robinhood.com/watchlists/Technology/",
     "user": "https://api.robinhood.com/user/",
     "name": "Technology"
 }
