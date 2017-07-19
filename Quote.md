@@ -100,7 +100,7 @@ Note: The maximum number of symbols that can be defined per call is 1630.  Anyth
         span=day(default)|week|year|5year|all
         bounds=extended|regular|trading(default)
 
-Up to 75 symbols at once.
+    Up to 75 symbols at once.
 
 - Get Quotes
 
