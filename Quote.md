@@ -92,6 +92,15 @@ Note: The maximum number of symbols that can be defined per call is 1630.  Anyth
         interval=week|day|10minute|5minute|null(all)
         span=day|week|year|5year|all
         bounds=extended|regular|trading
+        
+- Get Historical Quotes for several symbols at once
+
+    GET /quotes/historicals/?symbols=$csv_symbols&interval=$i[&span=$s&bounds=$b]
+        interval=week|day|10minute|5minute
+        span=day(default)|week|year|5year|all
+        bounds=extended|regular|trading(default)
+
+Up to 75 symbols at once.
 
 - Get Quotes
 
