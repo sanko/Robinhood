@@ -10,6 +10,7 @@
 - [Get the Customer Identification Program Questions](#get-the-customer-identification-program-questions)
 - [Answer Customer Identification Program Questions](#answer-customer-identification-program-questions)
 - [Update User Information](#update-user-information)
+- [Check Ability to Downgrade to Cash Account](#check-ability-to-downgrade-to-cash-account)
 
 Now that you're [logged in](Authentication.md#logging-in), you'll probably want to get to know yourself a little bit. Here we go...
 
@@ -667,6 +668,41 @@ _Untested_
 **Response sample**
 
 _Untested_
+
+# Check Ability to Downgrade to Cash Account
+
+Robinhood will allow you to manually downgrade the default Instant account to a cash account. Before this is possible, you need to verify that you are not using the limited margin provided by Instant or extended Gold margin.
+
+**Method**
+
+| URI                        | HTTP Method | Authentication |
+|----------------------------|-------------|----------------|
+| api.robinhood.com/accounts/{account_id}/can_downgrade_to_cash/ | GET         | *Yes*          |
+
+**Fields**
+
+AFAIK, there are none.
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/accounts/8UD09348/can_downgrade_to_cash/ \
+   -H "Accept: application/json" \
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
+```
+
+**Response**
+
+| Key                   | Type    | Description |
+|-----------------------|---------|-------------|
+| can_downgrade_to_cash | boolean | If the account is ready to downgrade, this will be true |
+
+**Response sample**
+```
+{
+    "can_downgrade_to_cash": false
+}
+```
 
 # TODO
 
