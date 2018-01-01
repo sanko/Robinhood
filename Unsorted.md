@@ -38,6 +38,7 @@ List your Portfolios
 
 **Fields**
 *WIP*
+
 | Parameter     | Type   | Description                                         		          | Default |Required|
 |---------------|--------|--------------------------------------------------------------------|---------|--------|
 | account       | URL    | Account to make this order with      				              | N/A     | *Yes*  |
@@ -64,6 +65,7 @@ curl -v https://api.robinhood.com/accounts/{account.number}/portfolio/
 
 Fields are returned as well as the following:
 *WIP*
+
 | Key          		| Type     | Description |
 |-------------------|----------|-------------|
 | updated_at        | ISO 8601 |  |
