@@ -71,6 +71,7 @@ A [paginated](README.md#pagination) list of accounts is returned. Accounts conta
 | account_number                | String   | The alphanumeric string Robinhood uses to identify this account |
 | uncleared_deposits            | Float    | Amount of money in transet from an inconplete ACH deposit |
 | unsettled_funds               | Float    | Amount of money in unsettled funds |
+| nummus_enabled                | Boolean   |  |
 
 **`cash_balances`**
 
@@ -151,7 +152,8 @@ For Normal accounts:
     	"sma_held_for_orders": null,
     	"account_number": "8UD09348",
     	"uncleared_deposits": "0.0000",
-    	"unsettled_funds": "100.0000"
+    	"unsettled_funds": "100.0000",
+	"nummus_enabled": null
 	}]
 }
 ```
