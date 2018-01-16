@@ -15,6 +15,7 @@ Table of Contents:
 - [Authentication.md](Authentication.md) for methods related to user authentication, password recovery, etc.
 - [Banking.md](Banking.md) for bank accounts & ACH transfers methods
 - [Order.md](Order.md) for order-related functions (placing, cancelling, listing previous orders, etc.)
+- [Options.md](Options.md) for options related endpoints
 - [Quote.md](Quote.md) for stock quotes
 - [Fundamentals.md](Fundamentals.md) for basic, fundamental data
 - [Instrument.md](Instrument.md) for internal reference to financial instruments
