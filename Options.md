@@ -3,6 +3,7 @@
 Lose money faster!
 
 - [Get Length of Waitlist](#get-length-of-waitlist)
+- [Join the Options Waitlist](#join-the-options-waitlist)
 
 # Get Length of Waitlist
 
@@ -37,6 +38,43 @@ Fields are returned as well as the following:
 
 ```
 {
-    "count":427971
+    "count": 427971
 }
 ```
+
+# Join the Options Waitlist
+
+Get on the train!
+
+**Method**
+
+| URI                       | HTTP Method | Authentication |
+|---------------------------|-------------|----------------|
+| api.robinhood.com/midlands/waitlist/add/options_waitlist/ | POST        | No          |
+
+**Fields**
+
+| Parameter     | Type   | Description                                                        | Default |Required|
+|---------------|--------|--------------------------------------------------------------------|---------|--------|
+| email       | address    | Email address attached to an existing account | N/A     | *Yes*  |
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/midlands/waitlist/add/options_waitlist/ \
+   -H "Accept: application/json" \
+   -d email=fun@example.com
+```
+
+**Response**
+
+An empty list is returned as the body of the response. The HTTP response code is 201 if the address is being added. The HTTP response code is 200 if the account is already on the list.
+
+**Response sample**
+
+```
+{
+}
+```
+
+
