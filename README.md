@@ -24,6 +24,7 @@ Table of Contents:
 - [Settings.md](Settings.md) covers notifications and other settings
 - [Markets.md](Markets.md) describes the API for getting basic info about specific exchanges themselves
 - [Referrals.md](Referrals.md) is all about account referrals
+- [Statistics.md](Statistics.md) exposes the new social/statistical endpoints
 - [Tags.md](Tags.md) exposes the new categorizing endpoints
 
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
