@@ -26,7 +26,7 @@ Buy and sell shares of securities!
 | instrument    | URL    | Instrument URL of the security you're attempting to buy or sell    | N/A     | *Yes*  |
 | symbol        | String | The ticker symbol of the security you're attempting to buy or sell | N/A     | *Yes*  |
 | type 		    | String | Order type: `market` or `limit`                                    | N/A     | *Yes*  |
-| time_in_force | String | `gfd`, `gtc`, `ioc`, `fok` or `opg`                                | N/A     | *Yes*  |
+| time_in_force | String | `gfd`, `gtc`, `ioc`, or `opg`                                 | N/A     | *Yes*  |
 | trigger	    | String | `immediate` or `stop`                                              | N/A     | *Yes*  |
 | price		    | Float  | The price you're willing to accept in a sell or pay in a buy       | N/A     | Only when `type` equals `limit`   |
 | stop_price    | Float  | The price at which an order with a `stop` trigger converts         | N/A     | Only when `trigger` equals `stop` |
@@ -36,6 +36,8 @@ Buy and sell shares of securities!
 | extended_hours | Boolean | Would/Should order execute when exchanges are closed             | N/A     | No     |
 | override_day_trade_checks | Boolean |                                                       | N/A     | No     |
 | override_dtbp_checks | Boolean |                                                            | N/A     | No     |
+
+*Note: `time_in_force` `opg` is not supported during `extended_hours`*
 
 **Request sample**
 
@@ -47,7 +49,7 @@ curl -v https://api.robinhood.com/orders/ \
    -d instrument=https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79ffa/ \
    -d symbol=MSFT \
    -d type=market \
-   -d time_in_force=fok \
+   -d time_in_force=gtc \
    -d trigger=immediate \
    -d quantity=1 \
    -d side=sell
@@ -83,7 +85,7 @@ Fields are returned as well as the following:
 {
     "updated_at": "2016-04-01T21:24:13.698563Z",
     "executions": [],
-    "time_in_force": "fok",
+    "time_in_force": "gtc",
     "fees": "0.00",
     "cancel": "https://api.robinhood.com/orders/15390ade-face-caca-0987-9fdac5824701/cancel/",
     "id": "15390ade-face-caca-0987-9fdac5824701",
