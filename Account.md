@@ -759,6 +759,7 @@ This returns very basic information (basically just a name and email address) an
 | URI                                                | HTTP Method | Authentication |
 |----------------------------------------------------|-------------|----------------|
 | api.robinhood.com/accounts/{account_id}/positions/ | GET         | *Yes*          |
+| api.robinhood.com/positions/                       | GET         | *Yes*          |
 
 **Fields**
 
