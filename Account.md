@@ -12,6 +12,7 @@
 - [Update User Information](#update-user-information)
 - [Check Ability to Downgrade to Cash Account](#check-ability-to-downgrade-to-cash-account)
 - [Check Ability to Downgrade to Cash Account with a Nice Message](#check-ability-to-downgrade-to-cash-account-with-a-nice-message)
+- [Gather Account Positions](#gather-account-positions)
 
 ---
 
@@ -748,6 +749,126 @@ curl -v https://api.robinhood.com//midlands/accounts/cash_downgrade_info/?accoun
     "can_downgrade_to_cash": false
 }
 ```
+
+# Gather Account Positions
+
+This returns very basic information (basically just a name and email address) and URLs for more.
+
+**Method**
+
+| URI                                                | HTTP Method | Authentication |
+|----------------------------------------------------|-------------|----------------|
+| api.robinhood.com/accounts/{account_id}/positions/ | GET         | *Yes*          |
+
+**Fields**
+
+| Parameter | Type    | Description                   | Default | Required |
+|-----------|---------|-------------------------------|---------|----------|
+| nonzero   | Boolean | Only return current positions | false   | No       |
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/accounts/8UD09348/positions/ \
+   -H "Accept: application/json" \
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
+```
+
+**Response**
+
+Returns a paginated list of positions. Each position is a hash with the following keys/values.
+
+| Key    | Type   | Description |
+|-------------|--------|-------------|
+| account   | URL | Link back to the account |
+| shares_held_for_stock_grants | Float |   |
+| intraday_quantity  | Float |  |
+| intraday_average_buy_price | Float |  |
+| url        | URL    | This exact URL for this particular position |
+| created_at | ISO 8601 |  |
+| updated_at | ISO 8601 |  |
+| shares_held_for_buys | Float | |
+| average_buy_price | Float |  |
+| instrument | URL | Link back to the instrument itself |
+| shares_held_for_sells | Float |  |
+| quantity | Float |  |
+
+**Response sample**
+```
+{   "previous": null,
+    "results": [
+        {   "shares_held_for_stock_grants": "0.0000",
+            "account": "https://api.robinhood.com/accounts/8UD09348/",
+            "intraday_quantity": "0.0000",
+            "intraday_average_buy_price": "2.3400",
+            "url": "https://api.robinhood.com/accounts/8UD09348/positions/a44552fb-9f59-4168-86f1-c93998fa019d/",
+            "created_at": "2018-01-11T17:48:47.128378Z",
+            "updated_at": "2018-01-11T18:11:42.883624Z",
+            "shares_held_for_buys": "0.0000",
+            "average_buy_price": "2.3400",
+            "instrument": "https://api.robinhood.com/instruments/a44552fb-9f59-4168-86f1-c93998fa019d/",
+            "shares_held_for_sells": "0.0000",
+            "quantity": "0.0000"
+        },
+        {   "shares_held_for_stock_grants": "0.0000",
+            "account": "https://api.robinhood.com/accounts/8UD09348/",
+            "intraday_quantity": "0.0000",
+            "intraday_average_buy_price": "0.0000",
+            "url": "https://api.robinhood.com/accounts/8UD09348/positions/534a147a-afbf-4354-a2dd-21570a47e186/",
+            "created_at": "2018-01-11T17:47:00.969942Z",
+            "updated_at": "2018-01-11T17:50:17.647447Z",
+            "shares_held_for_buys": "0.0000",
+            "average_buy_price": "0.0000",
+            "instrument": "https://api.robinhood.com/instruments/534a147a-afbf-4354-a2dd-21570a47e186/",
+            "shares_held_for_sells": "0.0000",
+            "quantity": "0.0000"
+        },
+        {   "shares_held_for_stock_grants": "0.0000",
+            "account": "https://api.robinhood.com/accounts/8UD09348/",
+            "intraday_quantity": "0.0000",
+            "intraday_average_buy_price": "0.0000",
+            "url":  "https://api.robinhood.com/accounts/8UD09348/positions/039abc93-b84b-4664-881c-b1636b0edeef/",
+            "created_at": "2018-01-04T19:08:21.334483Z",
+            "updated_at": "2018-01-08T15:06:07.628025Z",
+            "shares_held_for_buys": "0.0000",
+            "average_buy_price": "116.3400",
+            "instrument": "https://api.robinhood.com/instruments/039abc93-b84b-4664-881c-b1636b0edeef/",
+            "shares_held_for_sells": "0.0000",
+            "quantity": "0.0000"
+        },
+        {   "shares_held_for_stock_grants": "0.0000",
+            "account": "https://api.robinhood.com/accounts/8UD09348/",
+            "intraday_quantity": "0.0000",
+            "intraday_average_buy_price": "0.0000",
+            "url": "https://api.robinhood.com/accounts/8UD09348/positions/387ac940-5c02-4ac3-b91b-09d38c2f776c/",
+            "created_at": "2018-01-04T19:05:14.618724Z",
+            "updated_at": "2018-01-09T15:11:40.656626Z",
+            "shares_held_for_buys": "0.0000",
+            "average_buy_price": "3.4800",
+            "instrument": "https://api.robinhood.com/instruments/387ac940-5c02-4ac3-b91b-09d38c2f776c/",
+            "shares_held_for_sells": "0.0000",
+            "quantity": "0.0000"
+        },
+        {   "shares_held_for_stock_grants": "0.0000",
+            "account": "https://api.robinhood.com/accounts/8UD09348/",
+            "intraday_quantity": "0.0000",
+            "intraday_average_buy_price": "0.0000",
+            "url":  "https://api.robinhood.com/accounts/8UD09348/positions/a390bc93-82d3-472b-9953-780d53c3c15f/",
+            "created_at": "2016-01-06T17:48:53.905565Z",
+            "updated_at": "2016-01-06T21:00:37.295122Z",
+            "shares_held_for_buys": "0.0000",
+            "average_buy_price": "0.0000",
+            "instrument": "https://api.robinhood.com/instruments/a390bc93-82d3-472b-9953-780d53c3c15f/",
+            "shares_held_for_sells": "0.0000",
+            "quantity": "0.0000"
+            }
+        ],
+        "next": null
+}
+
+```
+
+
 
 # TODO
 
