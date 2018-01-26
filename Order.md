@@ -28,7 +28,7 @@ Buy and sell shares of securities!
 | type 		    | String | Order type: `market` or `limit`                                    | N/A     | *Yes*  |
 | time_in_force | String | `gfd`, `gtc`, `ioc`, or `opg`                                 | N/A     | *Yes*  |
 | trigger	    | String | `immediate` or `stop`                                              | N/A     | *Yes*  |
-| price		    | Float  | The price you're willing to accept in a sell or pay in a buy       | N/A     | Only when `type` equals `limit`   |
+| price		    | Float  | The price you're willing to accept in a sell or pay in a buy       | N/A     | *Yes*  |
 | stop_price    | Float  | The price at which an order with a `stop` trigger converts         | N/A     | Only when `trigger` equals `stop` |
 | quantity      | Int    | Number of shares you would like to buy or sell                     | N/A     | *Yes*  |
 | side          | String | `buy` or `sell`                                                    | N/A     | *Yes*  |
@@ -38,6 +38,8 @@ Buy and sell shares of securities!
 | override_dtbp_checks | Boolean |                                                            | N/A     | No     |
 
 *Note: `time_in_force` `opg` is not supported during `extended_hours`*
+
+*Note 2: `market` orders in Robinhood are adjusted to limit orders collared up to 5% (which is why a price is required). This process is not automatic, and so market orders will remain pending if the given price is not equal to the last bid price at execution (until the last bid price once again hits the given price).*
 
 **Request sample**
 
