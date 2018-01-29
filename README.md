@@ -29,6 +29,13 @@ Table of Contents:
 
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
+## Crypto
+
+Crypto endpoints require OAauth2. This will make things hard for 3rd party use unless Robinhood decides to allow generation of keys. The base url is `https://nummus.robinhood.com/`.
+
+ - [Get list of Crypto Watchlists](/nummus/watchlists/get.md): `GET /watchlists/`
+ - [Create a new Crypto Watchlist](/nummus/watchlists/post.md): `POST /watchlists/`
+
 # Introduction
 
 [Robinhood](http://robinhood.com/) is a commission-free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
@@ -63,7 +70,7 @@ The API reports incorrect data or improper use with HTTP status codes and JSON o
 | 400         | `non_field_errors` | `["Unable to log in with provided credentials."]` | Attempted to [log in](#logging-in) with incorrect username/password |
 | 400         | `password`         | `["This field may not be blank."]`                | Attempted to [log in](#logging-in) without a password |
 | 401         | `detail`           | `["Invalid token."]`                              | Attempted to use cached token after [logging out](#logging-out) |
-| 400         | `password`           | `["This password is too short. It must contain at least 10 characters.", "This password is too common."]`                                                       | Attempted to [change my password](#password-reset) to `password` |
+| 400         | `password`         | `["This password is too short. It must contain at least 10 characters.", "This password is too common."]`                                                       | Attempted to [change my password](#password-reset) to `password` |
 
 ...you get the idea. Letting you know exactly what went wrong makes the API almost self-documenting so thanks Robinhood.
 
