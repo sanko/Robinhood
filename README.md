@@ -43,6 +43,8 @@ Crypto endpoints require OAuth2. This will make things hard for 3rd party use un
  - [Get list of Crypto Watchlists](/nummus/watchlists/get.md): `GET /watchlists/`
  - [Create a new Crypto Watchlist](/nummus/watchlists/post.md): `POST /watchlists/`
  - [Modify a Crypto Watchlist](/nummus/watchlists/{id}/patch.md): `PATCH /watchlists/{id}/`
+ - [Get Crypto Currency Pairs](/nummus/currency_pairs/get.md): `GET /currency_pairs/`
+ - [Get Crypto Currency Pair by ID](/nummus/currency_pairs/{id}/get.md): `GET /currency_pairs/{id}/`
 
 # Introduction
 
