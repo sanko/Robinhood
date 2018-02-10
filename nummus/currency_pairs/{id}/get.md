@@ -20,7 +20,7 @@ Returns data on a single Crypto currency pair.
 
 **Content examples**
 
-For a basic call to `https://nummus.robinhood.com/currency_pairs/`:
+For a basic call to `https://nummus.robinhood.com/currency_pairs/3d961844-d360-45fc-989b-f6fca761d511/`:
 
 ```json
 {
