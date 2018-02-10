@@ -46,7 +46,7 @@ For a call by symbol like `https://api.robinhood.com/marketdata/forex/quotes/BTC
     "mark_price": "8756.1550",
     "high_price": "10253.5300",
     "low_price": "8682.2600",
-    "open_price":"10185.9100",
+    "open_price": "10185.9100",
     "symbol": "BTCUSD",
     "id": "3d961844-d360-45fc-989b-f6fca761d511",
     "volume": "642158.9215",

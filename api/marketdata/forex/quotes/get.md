@@ -29,7 +29,7 @@ For a basic call by currency pair id (UUID) like `https://api.robinhood.com/mark
         {
             "ask_price": "0.4400",
             "bid_price": "0.4400",
-            "mark_price": "0.4400",
+            "mark_price": "0.4400", 
             "high_price": "0.5369",
             "low_price": "0.4220",
             "open_price": "0.5288",

@@ -2,7 +2,7 @@
 
 Create a new crypto watchlist.
 
-**URL** : `/watchlits/`
+**URL** : `/watchlists/`
 
 **Method** : `POST`
 
