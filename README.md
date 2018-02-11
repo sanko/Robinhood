@@ -41,6 +41,8 @@ All quote are served from the base url `https://api.robinhood.com/`. Crypto quot
 
 Crypto endpoints require OAuth2. This will make things hard for 3rd party use unless Robinhood decides to allow generation of keys. The base url is `https://nummus.robinhood.com/`.
 
+ - [Activate or Reactivate a Crypto Account](/nummus/activations/post.md): `POST /activations/`
+ - [Get a List of Active Crypto Accounts](/nummus/activations/get.md): `GET /activations/`
  - [Get a List of Crypto Portfolios](/nummus/portfolios/get.md): `GET /portfolios/`
  - [Get a Single Crypto's Portfolio Information](/nummus/portfolios/{id}/get.md): `GET /portfolios/{id}/`
  - [Get list of Crypto Trading Halts](/nummus/halts/get.md): `GET /halts/`
