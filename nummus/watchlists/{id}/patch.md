@@ -24,7 +24,7 @@ Add to or remove currency from a crypto watchlist.
 
 **Data examples**
 
-A list of currency pairs is handed off.
+A list of currency pairs is handed off. Note that this endpoint expects data to be in JSON.
 
 ```json
 {
