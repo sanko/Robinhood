@@ -1,5 +1,5 @@
 # User Information Methods
-
+- [Gather List of Accounts](#gather-list-of-accounts)
 - [Gather Basic User Info](#gather-basic-user-info)
 - [Gather the Account ID](#gather-the-account-id)
 - [Gather Basic Information About the Account Holder](#gather-basic-information-about-the-account-holder)
@@ -207,6 +207,32 @@ For Instant accounts:
 		"unsettled_funds": "190.9800"
 	}
 ```
+# Retrieve a single Account
+
+Almost identical to the above, but for a single account
+
+**Method**
+
+| URI                         | HTTP Method | Authentication |
+|-----------------------------|-------------|----------------|
+| api.robinhood.com/accounts/**account_number** | GET         | *Yes*          |
+
+**Fields**
+
+`account_number` : The number of the account, gathered from [List Accounts](#gather-list-of-accounts)
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/accounts/8UD09348 \
+   -H "Accept: application/json" \
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
+```
+
+**Response**
+
+Identical to [List Accounts](#gather-list-of-accounts) but a single entry.
+
 
 # Gather Basic User Info
 
@@ -889,4 +915,3 @@ Returns a paginated list of positions. Each position is a hash with the followin
 - Get Margin Settings			GET /settings/margin/$accountNumber/
 - Update Day Trade Setting      PATCH /settings/margin/{acctNumber}/            {$margin_settings}
 - Get Margin Upgrades			GET /margin/upgrades/
-- Get Account					GET /accounts/$id/
