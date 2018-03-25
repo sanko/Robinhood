@@ -12,7 +12,6 @@ Table of Contents:
 
 ## See also
 
-- [Authentication.md](Authentication.md) for methods related to user authentication, password recovery, etc.
 - [Banking.md](Banking.md) for bank accounts & ACH transfers methods
 - [Order.md](Order.md) for order-related functions (placing, cancelling, listing previous orders, etc.)
 - [Options.md](Options.md) for options related endpoints
@@ -28,6 +27,13 @@ Table of Contents:
 - [Tags.md](Tags.md) exposes the new categorizing endpoints
 
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
+
+## Authorization
+
+If you plan to do much beyond requesting quote data, you'll need to log in and use an authorization token.
+
+ - [Log in (old skool)](/api/api-token-auth/post.md): `POST /api-token-auth/`
+ - [Log out (old skool)](/api/api-token-logout/post.md): `POST /api-token-logout/`
 
 ## Quote Data
 
