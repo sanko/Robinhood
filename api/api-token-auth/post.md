@@ -219,7 +219,6 @@ curl -v https://api.robinhood.com/api-token-auth/ \
 }
 ```
 
-
 ## Notes
 
 * Note that this is the old means of authentication and will not provide access to Crypto or Feed.

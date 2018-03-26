@@ -27,6 +27,20 @@ curl -v https://api.robinhood.com/api-token-logout/ \
 
 **Content example** : *On success, no content is returned.*
 
+### Error Response
+
+**Condition** : If this endpoint is called without auth headers.
+
+**Code** : `401 Unauthorized`
+
+**Content example** :
+
+```json
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+
 ## Notes
 
 * This forces all clients logged in with the old skool token to log out.
