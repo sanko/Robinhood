@@ -34,6 +34,7 @@ If you plan to do much beyond requesting quote data, you'll need to log in and u
 
  - [Log in (old skool)](/api/api-token-auth/post.md): `POST /api-token-auth/`
  - [Log out (old skool)](/api/api-token-logout/post.md): `POST /api-token-logout/`
+ - [Request password reset](/api/password_reset/request/post.md): `POST /password_reset/request/`
 
 ## Quote Data
 

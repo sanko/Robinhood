@@ -1,52 +1,9 @@
 # Authentication Methods
 
-- [Password Reset Request](#password-reset-request)
 - [Password Reset](#password-reset)
 - [Migrate Classic Auth Token to OAuth2](#migrate-classic-auth-token-to-oauth2)
 
 Most calls to the API will require an authorization token. After logging in, you should store the token in a secure way for future calls without forcing users to log in again.
-
-## Password Reset Request
-
-We all forget our password. This will have a reset request sent to your email address.
-
-**Method**
-
-| URI                                       | HTTP Method | Authentication |
-|-------------------------------------------|-------------|----------------|
-| api.robinhood.com/password_reset/request/ | POST        |	None           |
-
-**Fields**
-
-| Parameter | Type   | Description                 | Default | Required |
-|-----------|--------|-----------------------------|---------|----------|
-| email     | String | Address you registered with | N/A     | **Yes**  |
-
-**Request sample**
-
-```
-curl -v https://api.robinhood.com/password_reset/request/ \
-   -H "Accept: application/json" \
-   -d "email={email}"
-```
-
-**Response**
-
-| Key    | Type   | Description |
-|--------|--------|-------------|
-| link   | URL    | Link to the actual [reset URL](#password-reset) |
-| detail | String | Message you could display in your UI |
-
-*Note that this will always claim to be sending a reset email for brute force security reasons.*
-
-**Response sample**
-
-```
-{
-    "link": "https://api.robinhood.com/password_reset/",
-    "detail": "Email with password reset instructions sent!"
-}
-```
 
 ## Password Reset
 
