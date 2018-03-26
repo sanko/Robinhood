@@ -3,7 +3,7 @@
 - [Migrate Classic Auth Token to OAuth2](#migrate-classic-auth-token-to-oauth2)
 
 Most calls to the API will require an authorization token. After logging in, you should store the token in a secure way for future calls without forcing users to log in again.
-
+ 
 
 ## Migrate Classic Auth Token to OAuth2
 
@@ -29,7 +29,6 @@ curl -v https://api.robinhood.com/oauth2/migrate_token/ \
 ```
 
 **Response**
-
 
 | Key    | Type   | Description |
 |--------|--------|-------------|
