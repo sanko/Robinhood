@@ -1,43 +1,8 @@
 # Authentication Methods
 
-- [Password Reset](#password-reset)
 - [Migrate Classic Auth Token to OAuth2](#migrate-classic-auth-token-to-oauth2)
 
 Most calls to the API will require an authorization token. After logging in, you should store the token in a secure way for future calls without forcing users to log in again.
-
-## Password Reset
-
-After requesting a password reset, an email is sent with a link that allows you to set a new password. This is that link on the API side.
-
-**Method**
-
-| URI                               | HTTP Method | Authentication |
-|-----------------------------------|-------------|----------------|
-| api.robinhood.com/password_reset/ | POST        |	None           |
-
-**Fields**
-
-| Parameter | Type   | Description                                         | Default | Required |
-|-----------|--------|-----------------------------------------------------|---------|----------|
-| username  | String | The username associated with the email address      | N/A     | *Yes*    |
-| token     | String | Reset token provided by Robinhood in the reset link | N/A     | *Yes*    |
-| password  | String | New password                                        | N/A     | *Yes*    |
-
-**Request sample**
-
-```
-curl -v https://api.robinhood.com/password_reset/request/ \
-   -H "Accept: application/json" \
-   -d "username=contact@example.com&password=10CharsPls&token=defacedefacedefacefe-a-f-af01286fd-acef8
-```
-
-**Response**
-
-*Untested*
-
-**Response sample**
-
-*Untested*
 
 
 ## Migrate Classic Auth Token to OAuth2
