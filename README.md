@@ -47,6 +47,12 @@ All quote are served from the base url `https://api.robinhood.com/`. Crypto quot
  - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
  - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
 
+## Options
+
+Options endpoints require an authorized client. Either old skool or OAuth will work.
+
+ - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains`
+
 ## Crypto
 
 Crypto endpoints require OAuth2. This will make things hard for 3rd party use unless Robinhood decides to allow generation of keys. The base url is `https://nummus.robinhood.com/`.
