@@ -10,13 +10,36 @@ Grab the full list of options. Have at it!
 
 **Permissions required** : None
 
-**Request sample**
+**Query constraints**
+
+    - equity_instrument_ids - comma separated list of instrument ids (optional)
+    - ids - comma separated list of options ids (optional)
+
+**Request samples**
+
+Full list:
 
 ```
 curl -v https://api.robinhood.com/options/chains/ \
    -H "Accept: application/json"
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
-```   
+```
+
+Options related to a particular underlying instrument:
+
+```
+curl -v https://api.robinhood.com/options/chains/?equity_instrument_ids=6a17083e-2867-4a20-9b78-a0a46b422279 \
+   -H "Accept: application/json"
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
+```
+
+Options chains by id:
+
+```
+curl -v https://api.robinhood.com/options/chains/?ids=0c0959c2-eb3a-4e3b-8310-04d7eda4b35c \
+   -H "Accept: application/json"
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
+```
 
 ## Success Responses
 
