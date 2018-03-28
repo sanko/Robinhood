@@ -14,6 +14,7 @@ Grab the full list of options. Have at it!
 
     - equity_instrument_ids - comma separated list of instrument ids (optional)
     - ids - comma separated list of options ids (optional)
+    - cursor - paginated list position (optional)
 
 **Request samples**
 

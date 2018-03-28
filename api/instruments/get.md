@@ -17,6 +17,7 @@ This returns a paginated list of instruments tracked by Robinhood's partners sor
     - active_instruments_only - boolean (optional)
     - nocache - boolean (optional)
     - ids - comma separated list of instrument ids (optional)
+    - cursor - paginated list position (optional)
 
 **Request samples**
 
