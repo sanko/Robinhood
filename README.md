@@ -47,11 +47,17 @@ All quote are served from the base url `https://api.robinhood.com/`. Crypto quot
  - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
  - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
 
+## Instruments
+
+Stocks and ETFs are plain ol' instruments and are served from the base url `https://api.robinhood.com/`. You'll need the data from here to place an order but these endpoints do not typically require authoization tokens.
+
+ - [Gather paginated list of all instruments](/api/instruments/get.md): `GET /instruments/`
+
 ## Options
 
 Options endpoints require an authorized client. Either old skool or OAuth will work.
 
- - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains`
+ - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains/`
 
 ## Crypto
 

@@ -21,7 +21,7 @@ curl -v https://api.robinhood.com/api-token-logout/ \
 
 ## Success Responses
 
-**Condition** : Data provided is valid and watchlist is created.
+**Condition** : Data provided is valid and the token is expired.
 
 **Code** : `200 OK`
 

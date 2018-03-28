@@ -57,4 +57,4 @@ curl -v https://api.robinhood.com/quotes/MSFT/ \
 
 ## Notes**
 
-* Quotes are provided by without requiring login information.
+* Quotes are provided without requiring login information.
