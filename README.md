@@ -12,7 +12,6 @@ Table of Contents:
 
 ## See also
 
-- [Authentication.md](Authentication.md) for methods related to user authentication, password recovery, etc.
 - [Banking.md](Banking.md) for bank accounts & ACH transfers methods
 - [Order.md](Order.md) for order-related functions (placing, cancelling, listing previous orders, etc.)
 - [Options.md](Options.md) for options related endpoints
@@ -28,6 +27,55 @@ Table of Contents:
 - [Tags.md](Tags.md) exposes the new categorizing endpoints
 
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
+
+## Authorization
+
+If you plan to do much beyond requesting quote data, you'll need to log in and use an authorization token.
+
+ - [Log in (old skool)](/api/api-token-auth/post.md): `POST /api-token-auth/`
+ - [Log out (old skool)](/api/api-token-logout/post.md): `POST /api-token-logout/`
+ - [Migrate old skool auth token to OAuth2](/api/oauth2/migrate_token/post.md) `POST /oauth2/migrate_token/`
+ - [Request password reset](/api/password_reset/request/post.md): `POST /password_reset/request/`
+ - [Complete password reset](/api/password_reset/post.md): `POST /password_reset/`
+
+## Quote Data
+
+All quote are served from the base url `https://api.robinhood.com/`. Crypto quotes require login to access.
+
+ - [Gather Quote Data by Stock Ticker Symbol](/api/quotes/{symbol}/get.md): `GET /quotes/{symbol}/`
+ - [Get a List of Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/get.md): `GET /marketdata/forex/quotes/`
+ - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
+ - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
+
+## Instruments
+
+Stocks and ETFs are plain ol' instruments and are served from the base url `https://api.robinhood.com/`. You'll need the data from here to place an order but these endpoints do not typically require authoization tokens.
+
+ - [Gather paginated list of all instruments](/api/instruments/get.md): `GET /instruments/`
+
+## Options
+
+Options endpoints require an authorized client. Either old skool or OAuth will work.
+
+ - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains/`
+
+## Crypto
+
+Crypto endpoints require OAuth2. This will make things hard for 3rd party use unless Robinhood decides to allow generation of keys. The base url is `https://nummus.robinhood.com/`.
+
+ - [Activate or Reactivate a Crypto Account](/nummus/activations/post.md): `POST /activations/`
+ - [Get a List of Active Crypto Accounts](/nummus/activations/get.md): `GET /activations/`
+ - [Get a List of Crypto Portfolios](/nummus/portfolios/get.md): `GET /portfolios/`
+ - [Get a Single Crypto's Portfolio Information](/nummus/portfolios/{id}/get.md): `GET /portfolios/{id}/`
+ - [Get list of Crypto Trading Halts](/nummus/halts/get.md): `GET /halts/`
+ - [Get a List of Crypto Holdings](/nummus/holdings/get.md): `GET /holdings/`
+ - [Get list of Crypto Watchlists](/nummus/watchlists/get.md): `GET /watchlists/`
+ - [Create a new Crypto Watchlist](/nummus/watchlists/post.md): `POST /watchlists/`
+ - [Modify a Crypto Watchlist](/nummus/watchlists/{id}/patch.md): `PATCH /watchlists/{id}/`
+ - [Get Crypto Currency Pairs](/nummus/currency_pairs/get.md): `GET /currency_pairs/`
+ - [Get Crypto Currency Pair by ID](/nummus/currency_pairs/{id}/get.md): `GET /currency_pairs/{id}/`
+ - [Get List of Crypto Orders](/nummus/orders/get.md): `GET /orders/`
+ - [Cancel an Active Crypto Order](/nummus/orders/{id}/cancel/post.md): `POST /orders/{id}/cancel/`
 
 # Introduction
 
@@ -63,7 +111,7 @@ The API reports incorrect data or improper use with HTTP status codes and JSON o
 | 400         | `non_field_errors` | `["Unable to log in with provided credentials."]` | Attempted to [log in](#logging-in) with incorrect username/password |
 | 400         | `password`         | `["This field may not be blank."]`                | Attempted to [log in](#logging-in) without a password |
 | 401         | `detail`           | `["Invalid token."]`                              | Attempted to use cached token after [logging out](#logging-out) |
-| 400         | `password`           | `["This password is too short. It must contain at least 10 characters.", "This password is too common."]`                                                       | Attempted to [change my password](#password-reset) to `password` |
+| 400         | `password`         | `["This password is too short. It must contain at least 10 characters.", "This password is too common."]`                                                       | Attempted to [change my password](#password-reset) to `password` |
 
 ...you get the idea. Letting you know exactly what went wrong makes the API almost self-documenting so thanks Robinhood.
 

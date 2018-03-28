@@ -1,6 +1,5 @@
 # Quotes
 
-- [Gather Quote Data by Ticker Symbol](#gather-quote-data-by-ticker-symbol)
 - [Gather Quote Data for Multiple Ticker Symbols in a Single API Call](#gather-quote-data-for-multiple-ticker-symbols-in-a-single-api-call)
 - [TODO](#)
 
@@ -9,28 +8,7 @@ The `/quotes` relative path is a directory that contains information relevant cu
 **Notes**
 
 * Quotes are provided by Robinhood without requiring login information.
-
-# Gather Quote Data by Ticker Symbol
-
-`/quotes/{symbol}/`
-
-This subdirectory retrieves current quote data about a particular security traded with the given `{symbol}`.
-
-Data is returned as a JSON structure and looks like this call to `https://api.robinhood.com/quotes/MSFT/`:
-
-    { "ask_price": "54.2100",
-      "ask_size": 2000,
-      "bid_price": "54.2000",
-      "bid_size": 1800,
-      "last_trade_price": "54.1900",
-      "last_extended_hours_trade_price": null,
-      "previous_close": "54.6600",
-      "adjusted_previous_close" : "54.6600",
-      "previous_close_date": "2016-03-17",
-      "symbol": "MSFT",
-      "trading_halted": false,
-      "updated_at": "2016-03-18T15:45:28Z"
-    }
+ 
 
 # Gather Quote Data for Multiple Ticker Symbols in a Single API Call
 
