@@ -51,7 +51,7 @@ All quote are served from the base url `https://api.robinhood.com/`. Crypto quot
 
 Stocks and ETFs are plain ol' instruments and are served from the base url `https://api.robinhood.com/`. You'll need the data from here to place an order but these endpoints do not typically require authoization tokens.
 
- - [Gather paginated list of all instruments](/api/instruments/get.md): `GET /instruments/`
+ - [Gather paginated list of instruments](/api/instruments/get.md): `GET /instruments/`
 
 ## Options
 

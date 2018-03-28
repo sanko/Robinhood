@@ -1,6 +1,6 @@
 # Grab a Paginated List of All Instruments
 
-This returns a paginated list of all instruments tracked by Robinhood's partners sorted by their list date.
+This returns a paginated list of instruments tracked by Robinhood's partners sorted by their list date.
 
 **URL** : `/instruments/`
 
@@ -10,7 +10,28 @@ This returns a paginated list of all instruments tracked by Robinhood's partners
 
 **Permissions required** : None
 
+**Query constraints**
+
+    - symbol - ticker (optional; only one symbol at a time)
+    - query - keyword search (optional)
+
 **Request sample**
+
+To get certain instruments by symbol:
+
+```
+curl -v https://api.robinhood.com/instruments/?symbol=MSFT \
+   -H "Accept: application/json"
+```
+
+Keyword search:
+
+```
+curl -v https://api.robinhood.com/instruments/?query=oil \
+   -H "Accept: application/json"
+```
+
+To get the full list of instruments:
 
 ```
 curl -v https://api.robinhood.com/instruments/ \
@@ -24,6 +45,272 @@ curl -v https://api.robinhood.com/instruments/ \
 **Code** : `200 OK`
 
 **Content example** : 
+
+Grab an instrument by symbol with something like `https://api.robinhood.com/instruments/?symbol=MSFT`:
+
+```json
+{
+  "previous": null,
+  "results": [
+    {
+      "min_tick_size": null,
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79ffa/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79ffa/",
+      "quote": "https://api.robinhood.com/quotes/MSFT/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0010174300001000",
+      "list_date": "1987-09-17",
+      "name": "Microsoft Corporation - Common Stock",
+      "symbol": "MSFT",
+      "fundamentals": "https://api.robinhood.com/fundamentals/MSFT/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "50810c35-d215-4866-9758-0ada4ac79ffa",
+      "market": "https://api.robinhood.com/markets/XNAS/",
+      "simple_name": "Microsoft"
+    }
+  ],
+  "next": null
+}
+```
+
+To get a list of instruments related to a certain keyword, use something like `https://api.robinhood.com/instruments/?query=oil`:
+
+```json
+{
+  "previous": null,
+  "results": [
+    {
+      "min_tick_size": null,
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/ab4f79fc-f84a-4f7b-8132-4f3e5fb38075/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/ab4f79fc-f84a-4f7b-8132-4f3e5fb38075/",
+      "quote": "https://api.robinhood.com/quotes/MRO/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0010158100001000",
+      "list_date": "1970-01-02",
+      "name": "Marathon Oil Corporation",
+      "symbol": "MRO",
+      "fundamentals": "https://api.robinhood.com/fundamentals/MRO/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "ab4f79fc-f84a-4f7b-8132-4f3e5fb38075",
+      "market": "https://api.robinhood.com/markets/XNYS/",
+      "simple_name": "Marathon Oil"
+    },
+    {
+      "min_tick_size": null,
+      "type": "etp",
+      "splits": "https://api.robinhood.com/instruments/6d744560-ef77-4aa0-8524-7a771cc04bd7/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/6d744560-ef77-4aa0-8524-7a771cc04bd7/",
+      "quote": "https://api.robinhood.com/quotes/OIL/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0000000002030237",
+      "list_date": "2006-08-16",
+      "name": "Barclays Bank PLC iPath Exchange Traded Notes Linked to Goldman Sachs Crude Oil Total Return Index",
+      "symbol": "OIL",
+      "fundamentals": "https://api.robinhood.com/fundamentals/OIL/",
+      "state": "active",
+      "country": "GB",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "6d744560-ef77-4aa0-8524-7a771cc04bd7",
+      "market": "https://api.robinhood.com/markets/ARCX/",
+      "simple_name": null
+    },
+    {
+      "min_tick_size": null,
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/1aec2cb5-0b0d-49ff-a386-795f08c91019/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/1aec2cb5-0b0d-49ff-a386-795f08c91019/",
+      "quote": "https://api.robinhood.com/quotes/COG/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0010025300002000",
+      "list_date": "1994-01-03",
+      "name": "Cabot Oil & Gas Corp.",
+      "symbol": "COG",
+      "fundamentals": "https://api.robinhood.com/fundamentals/COG/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "1aec2cb5-0b0d-49ff-a386-795f08c91019",
+      "market": "https://api.robinhood.com/markets/XNYS/",
+      "simple_name": "Cabot Oil & Gas"
+    },
+    {
+      "min_tick_size": null,
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/d8edff21-cb19-4373-af1c-f83a3c0d01c4/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/d8edff21-cb19-4373-af1c-f83a3c0d01c4/",
+      "quote": "https://api.robinhood.com/quotes/MUR/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0010102400001000",
+      "list_date": "1990-01-02",
+      "name": "Murphy Oil Corp.",
+      "symbol": "MUR",
+      "fundamentals": "https://api.robinhood.com/fundamentals/MUR/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "d8edff21-cb19-4373-af1c-f83a3c0d01c4",
+      "market": "https://api.robinhood.com/markets/XNYS/",
+      "simple_name": "Murphy Oil"
+    },
+    {
+      "min_tick_size": null,
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/3ee7f4c5-5a23-4356-9479-b7ef93a04903/splits/",
+      "margin_initial_ratio": "0.5600",
+      "url": "https://api.robinhood.com/instruments/3ee7f4c5-5a23-4356-9479-b7ef93a04903/",
+      "quote": "https://api.robinhood.com/quotes/CRZO/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0022575600001000",
+      "list_date": "1997-08-06",
+      "name": "Carrizo Oil & Gas, Inc. - Common Stock",
+      "symbol": "CRZO",
+      "fundamentals": "https://api.robinhood.com/fundamentals/CRZO/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.4500",
+      "id": "3ee7f4c5-5a23-4356-9479-b7ef93a04903",
+      "market": "https://api.robinhood.com/markets/XNAS/",
+      "simple_name": "Carrizo Oil & Gas"
+    },
+    {
+      "min_tick_size": null,
+      "type": "etp",
+      "splits": "https://api.robinhood.com/instruments/01f33471-51d9-4afe-850f-b5f13d58c459/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/01f33471-51d9-4afe-850f-b5f13d58c459/",
+      "quote": "https://api.robinhood.com/quotes/USO/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0000000002417621",
+      "list_date": "2006-04-10",
+      "name": "United States Oil Fund, LP",
+      "symbol": "USO",
+      "fundamentals": "https://api.robinhood.com/fundamentals/USO/",
+      "state": "active",
+      "country": "CA",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "01f33471-51d9-4afe-850f-b5f13d58c459",
+      "market": "https://api.robinhood.com/markets/ARCX/",
+      "simple_name": null
+    },
+    {
+      "min_tick_size": null,
+      "type": "etp",
+      "splits": "https://api.robinhood.com/instruments/48eab16a-7378-45e9-970a-c50fd081d25d/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/48eab16a-7378-45e9-970a-c50fd081d25d/",
+      "quote": "https://api.robinhood.com/quotes/XOP/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0000000002554511",
+      "list_date": "2006-06-22",
+      "name": "SPDR S&P Oil & Gas Exploration & Production ETF",
+      "symbol": "XOP",
+      "fundamentals": "https://api.robinhood.com/fundamentals/XOP/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "48eab16a-7378-45e9-970a-c50fd081d25d",
+      "market": "https://api.robinhood.com/markets/ARCX/",
+      "simple_name": null
+    },
+    {
+      "min_tick_size": "0.0500",
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/68de11a3-37cb-4197-9052-15de2c84fb55/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/68de11a3-37cb-4197-9052-15de2c84fb55/",
+      "quote": "https://api.robinhood.com/quotes/OIS/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0118343700001000",
+      "list_date": "2001-02-09",
+      "name": "OIL STATES INTERNATIONAL, INC.",
+      "symbol": "OIS",
+      "fundamentals": "https://api.robinhood.com/fundamentals/OIS/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "68de11a3-37cb-4197-9052-15de2c84fb55",
+      "market": "https://api.robinhood.com/markets/XNYS/",
+      "simple_name": "Oil States International"
+    },
+    {
+      "min_tick_size": null,
+      "type": "etp",
+      "splits": "https://api.robinhood.com/instruments/b6e2a781-49e8-47c5-bee3-a01178ecff27/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/b6e2a781-49e8-47c5-bee3-a01178ecff27/",
+      "quote": "https://api.robinhood.com/quotes/OIH/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0174648800060000",
+      "list_date": "2001-02-07",
+      "name": "VanEck Vectors Oil Services ETF",
+      "symbol": "OIH",
+      "fundamentals": "https://api.robinhood.com/fundamentals/OIH/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "b6e2a781-49e8-47c5-bee3-a01178ecff27",
+      "market": "https://api.robinhood.com/markets/ARCX/",
+      "simple_name": null
+    },
+    {
+      "min_tick_size": null,
+      "type": "etp",
+      "splits": "https://api.robinhood.com/instruments/2d527c10-e3f0-4b3e-86a5-78ace01d67ed/splits/",
+      "margin_initial_ratio": "1.0000",
+      "url": "https://api.robinhood.com/instruments/2d527c10-e3f0-4b3e-86a5-78ace01d67ed/",
+      "quote": "https://api.robinhood.com/quotes/OILU/",
+      "tradability": "untradable",
+      "bloomberg_unique": "EQ0000000055756018",
+      "list_date": "2017-03-27",
+      "name": "ProShares UltraPro 3x Crude Oil ETF",
+      "symbol": "OILU",
+      "fundamentals": "https://api.robinhood.com/fundamentals/OILU/",
+      "state": "active",
+      "country": "",
+      "day_trade_ratio": "0.2500",
+      "tradeable": false,
+      "maintenance_ratio": "1.0000",
+      "id": "2d527c10-e3f0-4b3e-86a5-78ace01d67ed",
+      "market": "https://api.robinhood.com/markets/ARCX/",
+      "simple_name": null
+    }
+  ],
+  "next": null
+}
+```
+
+To get the full, unfiltered list of instruments, hit `https://api.robinhood.com/instruments/` and get something like this:
 
 ```json
 {
