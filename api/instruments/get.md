@@ -16,6 +16,7 @@ This returns a paginated list of instruments tracked by Robinhood's partners sor
     - query - keyword search (optional)
     - active_instruments_only - boolean (optional)
     - nocache - boolean (optional)
+    - ids - comma separated list of instrument ids (optional)
 
 **Request samples**
 
@@ -23,6 +24,13 @@ To get certain instruments by symbol:
 
 ```
 curl -v https://api.robinhood.com/instruments/?symbol=MSFT \
+   -H "Accept: application/json"
+```
+
+To get certain instruments by id:
+
+```
+curl -v https://api.robinhood.com/instruments/?ids=50810c35-d215-4866-9758-0ada4ac79ffa,b060f19f-0d24-4bf2-bf8c-d57ba33993e5 \
    -H "Accept: application/json"
 ```
 
@@ -75,6 +83,61 @@ Grab an instrument by symbol with something like `https://api.robinhood.com/inst
       "id": "50810c35-d215-4866-9758-0ada4ac79ffa",
       "market": "https://api.robinhood.com/markets/XNAS/",
       "simple_name": "Microsoft"
+    }
+  ],
+  "next": null
+}
+```
+
+Grab a list of instruments by id in one call like `https://api.robinhood.com/instruments/?ids=50810c35-d215-4866-9758-0ada4ac79ffa,b060f19f-0d24-4bf2-bf8c-d57ba33993e5`:
+
+```json
+{
+  "previous": null,
+  "results": [
+    {
+      "min_tick_size": null,
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79ffa/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79ffa/",
+      "quote": "https://api.robinhood.com/quotes/MSFT/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0010174300001000",
+      "list_date": "1987-09-17",
+      "name": "Microsoft Corporation - Common Stock",
+      "symbol": "MSFT",
+      "fundamentals": "https://api.robinhood.com/fundamentals/MSFT/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "50810c35-d215-4866-9758-0ada4ac79ffa",
+      "market": "https://api.robinhood.com/markets/XNAS/",
+      "simple_name": "Microsoft"
+    },
+    {
+      "min_tick_size": null,
+      "type": "stock",
+      "splits": "https://api.robinhood.com/instruments/b060f19f-0d24-4bf2-bf8c-d57ba33993e5/splits/",
+      "margin_initial_ratio": "0.5000",
+      "url": "https://api.robinhood.com/instruments/b060f19f-0d24-4bf2-bf8c-d57ba33993e5/",
+      "quote": "https://api.robinhood.com/quotes/X/",
+      "tradability": "tradable",
+      "bloomberg_unique": "EQ0010158200001000",
+      "list_date": "1991-04-12",
+      "name": "United States Steel Corporation",
+      "symbol": "X",
+      "fundamentals": "https://api.robinhood.com/fundamentals/X/",
+      "state": "active",
+      "country": "US",
+      "day_trade_ratio": "0.2500",
+      "tradeable": true,
+      "maintenance_ratio": "0.2500",
+      "id": "b060f19f-0d24-4bf2-bf8c-d57ba33993e5",
+      "market": "https://api.robinhood.com/markets/XNYS/",
+      "simple_name": "United States Steel"
     }
   ],
   "next": null
