@@ -14,8 +14,10 @@ This returns a paginated list of instruments tracked by Robinhood's partners sor
 
     - symbol - ticker (optional; only one symbol at a time)
     - query - keyword search (optional)
+    - active_instruments_only - boolean (optional)
+    - nocache - boolean (optional)
 
-**Request sample**
+**Request samples**
 
 To get certain instruments by symbol:
 
