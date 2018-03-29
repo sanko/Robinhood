@@ -59,6 +59,7 @@ Stocks and ETFs are plain ol' instruments and are served from the base url `http
 Options endpoints require an authorized client. Either old skool or OAuth will work.
 
  - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains/`
+ - [Gather paginated list of options instruments](/api/options/instruments/get.md): `GET /options/instruments/`
 
 ## Crypto
 
@@ -77,6 +78,7 @@ Crypto endpoints require OAuth2. This will make things hard for 3rd party use un
  - [Get Crypto Currency Pair by ID](/nummus/currency_pairs/{id}/get.md): `GET /currency_pairs/{id}/`
  - [Get List of Crypto Orders](/nummus/orders/get.md): `GET /orders/`
  - [Cancel an Active Crypto Order](/nummus/orders/{id}/cancel/post.md): `POST /orders/{id}/cancel/`
+ - [Place Crypto Order](/nummus/orders/post.md): `POST /orders/`
 
 # Introduction
 
