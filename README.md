@@ -38,6 +38,14 @@ If you plan to do much beyond requesting quote data, you'll need to log in and u
  - [Request password reset](/api/password_reset/request/post.md): `POST /password_reset/request/`
  - [Complete password reset](/api/password_reset/post.md): `POST /password_reset/`
 
+## Banking
+
+You gotta have at least one account attached to your Robinhood account to move money back and forth.
+
+ - [Schedule a regular deposit](/api/ach/deposit_schedules/post.md): `POST /ach/deposit_schedules/`
+ - [Gather list of scheduled deposits](/api/ach/deposit_schedules/get.md): `GET /ach/deposit_schedules/`
+ - [Cancel a scheduled deposit](/api/ach/deposit_schedules/{id}/delete.md): `DELETE /ach/deposit_schedules/{id}/`
+
 ## Quote Data
 
 All quote are served from the base url `https://api.robinhood.com/`. Crypto quotes require login to access.
