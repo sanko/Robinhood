@@ -12,13 +12,9 @@ If you plan to deposit the same amount on a regular basis, you could let Robinho
 
 **Data constraints**
 
-```json
-{
-    "ach_relationship": '/ach/relationshipts/{achRhId}/'
-    "amount": size of the transfer
-    "frequency": how often to make the transfer ('once', 'weekly', 'biweekly', 'monthly', or 'quarterly')
-}
-```
+    - ach_relationship: '/ach/relationships/{achRhId}/'
+    - amount: size of the transfer
+    - frequency: how often to make the transfer ('once', 'weekly', 'biweekly', 'monthly', or 'quarterly')
 
 **Data examples**
 
@@ -26,7 +22,7 @@ The following must not be empty or null.
 
 ```json
 {
-    "ach_relationship": "/ach/relationshipts/1db40909-6428-49a2-aa94-dacc3fea485b/",
+    "ach_relationship": "/ach/relationships/1db40909-6428-49a2-aa94-dacc3fea485b/",
     "amount": 500.75,
     "frequency": 'weekly'
 }
@@ -36,7 +32,7 @@ The following must not be empty or null.
 
 ```
 curl -X POST -H "Content-Type: application/json" \
-   -d '{"ach_relationship":"/ach/relationshipts/1db40909-6428-49a2-aa94-dacc3fea485b/",\
+   -d '{"ach_relationship":"/ach/relationships/1db40909-6428-49a2-aa94-dacc3fea485b/",\
       "amount":"500.75","frequency":"weekly"}' \
     https://api.robinhood.com/ach/deposit_schedules/
 ```
@@ -58,7 +54,7 @@ curl -X POST -H "Content-Type: application/json" \
     "id": "b9afaac5-c15e-4557-9e23-5a4cb4f3709b",
     "next_deposit_date": "2018-04-02",
     "updated_at": "2018-03-23T19:27:05.992382Z",
-    "ach_relationship": "ach_relationship":"http://api.robinhood.com/ach/relationshipts/1db40909-6428-49a2-aa94-dacc3fea485b/",
+    "ach_relationship": "ach_relationship":"http://api.robinhood.com/ach/relationships/1db40909-6428-49a2-aa94-dacc3fea485b/",
     "last_attempt_date": null
 }
 ```
@@ -70,6 +66,16 @@ curl -X POST -H "Content-Type: application/json" \
 **Code** : `400 BAD REQUEST`
 
 **Content example** :
+
+When you already have a scheduled deposit for that same combination of frequency and bank account:
+
+```json
+{
+    "non_field_errors": ["The fields ach_relationship, frequency must make a unique set."]
+}
+```
+
+When you aren't even logged in:
 
 ```json
 {
