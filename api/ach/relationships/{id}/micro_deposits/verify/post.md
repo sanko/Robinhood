@@ -2,7 +2,7 @@
 
 Add a new bank accounts to Robinhood.
 
-**URL** : `/ach/relationships/`
+**URL** : `/ach/relationships/{id}/micro_deposits/verify/`
 
 **Method** : `POST`
 
@@ -10,13 +10,14 @@ Add a new bank accounts to Robinhood.
 
 **Permissions required** : None
 
+**Path constraints**
+
+    - {id} - UUID
+
 **Data constraints**
 
-  - account: URL
-  - bank_routing_number: Bank's routing number
-  - bank_account_number: Account number
-  - bank_account_type: 'checking' or 'savings' 
-  - bank_account_holder_name: Full name of account holder
+  - first_amount_cents: integer
+  - second_amount_cents: integer
 
 **Data examples**
 
@@ -24,34 +25,28 @@ The following must not be empty or null.
 
 ```json
 {
-    "account": "https://api.robinhood.com/accounts/5TM6240/"
-    "bank_routing_number": "026009593",
-    "bank_account_number": "009872784317963",
-    "bank_account_type": "checking",
-    "bank_account_holder_name": "John Smith"
+    "first_amount_cents": 54,
+    "second_amount_cents": 44
 }
 ```
 
 **Request sample**
 
 ```
-curl -v https://api.robinhood.com/ach/relationships/ \
+curl -v https://api.robinhood.com/ach/relationships/b9afaac5-c15e-45cd-a5fb-09952c8ab388/micro_deposits/verify/ \
    -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114" \
-   -d "bank_routing_number=026009593& \
-    bank_account_number=009872784317963& \
-    bank_account_type=checking& \
-    bank_account_holder_name='John Smith' \
-    account=https://api.robinhood.com/accounts/5TM6240/"
+   -d "first_amount_cents=54& \
+    second_amount_cents=44"
 ```
 
 ## Success Responses
 
 **Condition** : Data provided is valid.
 
-**Code** : `201 Created`
+**Code** : `200 OK`
 
-**Content example** : Response will be a json containing the created ACH relationship:
+**Content example** : Response will be a json containing the verified ACH relationship:
 
 ```json
 {
@@ -67,7 +62,7 @@ curl -v https://api.robinhood.com/ach/relationships/ \
   "unlinked_at": null,
   "initial_deposit": "0.00",
   "withdrawal_limit": 2951.09,
-  "verified": false
+  "verified": true,
   "unlink": "https://api.robinhood.com/ach/relationships/b9afaac5-c15e-45cd-a5fb-09952c8ab388/unlink/",
   "bank_routing_number": "026009593",
   "id": "b9afaac5-c15e-45cd-a5fb-09952c8ab388"
@@ -92,4 +87,4 @@ When you aren't even logged in:
 
 ## Notes
 
-  * Untested.
+  * Untested

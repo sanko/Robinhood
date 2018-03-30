@@ -42,8 +42,9 @@ If you plan to do much beyond requesting quote data, you'll need to log in and u
 
 You gotta have at least one account attached to your Robinhood account to move money back and forth.
 
- - [Add a new bank account](/api/ach/relationships/post.md): `POST /ach/relationships/`
- - [Gather list of banks accounts](/api/ach/relationships/get.md): `GET /ach/relationships/`
+ - [Attach a new bank account](/api/ach/relationships/post.md): `POST /ach/relationships/`
+ - [Verify a new bank account](/ach/relationships/{id}/micro_deposits/verify/post.md): `POST /ach/relationships/{id}/micro_deposits/verify/`
+ - [Gather list of attached bank accounts](/api/ach/relationships/get.md): `GET /ach/relationships/`
  - [Get info on a single attached bank account](/api/ach/relationships/{id}/get.md): `GET /ach/relationships/{id}/`
  - [Remove an attached bank account](/api/ach/relationships/{id}/unlink/post.md): `POST /ach/relationships/{id}/unlink/`
  - [Schedule a regular deposit](/api/ach/deposit_schedules/post.md): `POST /ach/deposit_schedules/`
