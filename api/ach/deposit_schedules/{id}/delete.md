@@ -18,7 +18,7 @@ Cancel a scheduled deposit by deleting it from Robinhood.
 
 ```
 curl -X DELETE -H "Accept: application/json" \
-    https://api.robinhood.com/ach/deposit_schedules/b9afaac5-c15e-4557-9e23-5a4cb4f3709b/
+    https://api.robinhood.com/ach/deposit_schedules/093cb71a-c15e-4557-9e23-5a4cb4f3709b/
 ```
 
 ## Success Responses

@@ -28,6 +28,10 @@ Table of Contents:
 
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
+## Accounts
+
+ - [Gather your list of brokerage accounts](/api/accounts/get.md): `GET /accounts/`
+
 ## Authorization
 
 If you plan to do much beyond requesting quote data, you'll need to log in and use an authorization token.

@@ -24,7 +24,7 @@ The following must not be empty or null.
 
 ```json
 {
-    "account": "https://api.robinhood.com/accounts/5TM6240/"
+    "account": "https://api.robinhood.com/accounts/5QT72283/"
     "bank_routing_number": "026009593",
     "bank_account_number": "009872784317963",
     "bank_account_type": "checking",
@@ -42,7 +42,7 @@ curl -v https://api.robinhood.com/ach/relationships/ \
     bank_account_number=009872784317963& \
     bank_account_type=checking& \
     bank_account_holder_name='John Smith' \
-    account=https://api.robinhood.com/accounts/5TM6240/"
+    account=https://api.robinhood.com/accounts/5QT72283/"
 ```
 
 ## Success Responses
@@ -58,7 +58,7 @@ curl -v https://api.robinhood.com/ach/relationships/ \
   "account": "https://api.robinhood.com/accounts/5QT72283/",
   "verification_method": "micro_deposits",
   "verify_micro_deposits": null,
-  "url": "https://api.robinhood.com/ach/relationships/b9afaac5-c15e-45cd-a5fb-09952c8ab388/",
+  "url": "https://api.robinhood.com/ach/relationships/093cb71a-c15e-45cd-a5fb-dac83bcd9174/",
   "bank_account_nickname": "Bank of 'Merica",
   "created_at": "2015-12-31T20:22:20.095817Z",
   "bank_account_holder_name": "John Smith",
@@ -68,9 +68,9 @@ curl -v https://api.robinhood.com/ach/relationships/ \
   "initial_deposit": "0.00",
   "withdrawal_limit": 2951.09,
   "verified": false
-  "unlink": "https://api.robinhood.com/ach/relationships/b9afaac5-c15e-45cd-a5fb-09952c8ab388/unlink/",
+  "unlink": "https://api.robinhood.com/ach/relationships/093cb71a-c15e-45cd-a5fb-dac83bcd9174/unlink/",
   "bank_routing_number": "026009593",
-  "id": "b9afaac5-c15e-45cd-a5fb-09952c8ab388"
+  "id": "093cb71a-c15e-45cd-a5fb-dac83bcd9174"
 }
 ```
 
