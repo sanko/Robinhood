@@ -4,6 +4,7 @@ Lose money faster!
 
 - [Get Length of Waitlist](#get-length-of-waitlist)
 - [Join the Options Waitlist](#join-the-options-waitlist)
+- [Get Available Options Levels](#get-available-options-levels)
 
 # Get Length of Waitlist
 
@@ -77,4 +78,77 @@ An empty list is returned as the body of the response. The HTTP response code is
 }
 ```
 
+# Change Options Level
 
+**Method**
+
+| URI                                      | HTTP Method | Authentication |
+|------------------------------------------|-------------|----------------|
+| api.robinhood.com/options/level_changes/| POST        | Yes            |
+
+**Fields**
+
+HTTP POST body contains the following data.
+
+| Parameter | Type   | Description                                                        | Default |Required|
+|-----------|--------|--------------------------------------------------------------------|---------|--------|
+| email     | address    | Email address attached to an existing account | N/A     | *Yes*  |
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/options/level_changes/ \
+   -H "Accept: application/json" \
+   -d todo=future
+```
+
+**Response**
+
+An empty list is returned as the body of the response. The HTTP response code is 201 if the address is being added. The HTTP response code is 200 if the account is already on the list.
+
+**Response sample**
+
+```
+
+```
+
+
+
+# Get Available Options Levels
+
+Find out which levels of Option access your account supports.
+
+**Method**
+
+| URI                                      | HTTP Method | Authentication |
+|------------------------------------------|-------------|----------------|
+| api.robinhood.com/options/leval_changes/ | GET         | Yes            |
+
+**Fields**
+
+| Parameter | Type           | Description                            | Default |Required|
+|-----------|----------------|----------------------------------------|---------|--------|
+| account   | account number | Short string representing the account. | N/A     | *Yes*  |
+
+**Request sample**
+
+```
+curl -v https://api.robinhood.com/midlands/waitlist/count/options_waitlist/?account=8UD09348 \
+   -H "Accept: application/json"
+```
+
+**Response**
+
+A paginated list of objects is returned. The objects contian the following fields:
+
+| Key   | Type    | Description |
+|-------|---------|-------------|
+| count | Integer | How many are on the hype train |
+
+**Response sample**
+
+```
+{
+    "count": 427971
+}
+```

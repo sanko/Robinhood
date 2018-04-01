@@ -20,24 +20,22 @@ Buy and sell shares of securities!
 
 **Fields**
 
-| Parameter     | Type   | Description                                         		          | Default |Required|
-|---------------|--------|--------------------------------------------------------------------|---------|--------|
-| account       | URL    | Account to make this order with      				              | N/A     | *Yes*  |
-| instrument    | URL    | Instrument URL of the security you're attempting to buy or sell    | N/A     | *Yes*  |
-| symbol        | String | The ticker symbol of the security you're attempting to buy or sell | N/A     | *Yes*  |
-| type 		    | String | Order type: `market` or `limit`                                    | N/A     | *Yes*  |
-| time_in_force | String | `gfd`, `gtc`, `ioc`, or `opg`                                 | N/A     | *Yes*  |
-| trigger	    | String | `immediate` or `stop`                                              | N/A     | *Yes*  |
-| price		    | Float  | The price you're willing to accept in a sell or pay in a buy       | N/A     | Only when `type` equals `limit`   |
-| stop_price    | Float  | The price at which an order with a `stop` trigger converts         | N/A     | Only when `trigger` equals `stop` |
-| quantity      | Int    | Number of shares you would like to buy or sell                     | N/A     | *Yes*  |
-| side          | String | `buy` or `sell`                                                    | N/A     | *Yes*  |
-| client_id     | String | Only available for OAuth applications                              | N/A     | No     |
-| extended_hours | Boolean | Would/Should order execute when exchanges are closed             | N/A     | No     |
-| override_day_trade_checks | Boolean |                                                       | N/A     | No     |
-| override_dtbp_checks | Boolean |                                                            | N/A     | No     |
-
-*Note: `time_in_force` `opg` is not supported during `extended_hours`*
+| Parameter                 | Type    | Description                                         		           | Default |Required|
+|---------------------------|---------|--------------------------------------------------------------------|---------|--------|
+| account                   | URL     | Account to make this order with      				                       | N/A     | *Yes*  |
+| instrument                | URL     | Instrument URL of the security you're attempting to buy or sell    | N/A     | *Yes*  |
+| symbol                    | String  | The ticker symbol of the security you're attempting to buy or sell | N/A     | *Yes*  |
+| type 		                  | String  | Order type: `market` or `limit`                                    | N/A     | *Yes*  |
+| time_in_force             | String  | `gfd`, `gtc`, `ioc`, or `opg`                                      | N/A     | *Yes*  |
+| trigger	                  | String  | `immediate` or `stop`                                              | N/A     | *Yes*  |
+| price		                  | Float   | The price you're willing to accept in a sell or pay in a buy       | N/A     | Used a collar when `type` equals `market` |
+| stop_price                | Float   | The price at which an order with a `stop` trigger converts         | N/A     | Only when `trigger` equals `stop` |
+| quantity                  | Int     | Number of shares you would like to buy or sell                     | N/A     | *Yes*  |
+| side                      | String  | `buy` or `sell`                                                    | N/A     | *Yes*  |
+| client_id                 | String  | Only available for OAuth applications                              | N/A     | No     |
+| extended_hours            | Boolean | Would/Should order execute when exchanges are closed               | N/A     | Not when `time_in_force` equals `opg` |
+| override_day_trade_checks | Boolean |                                                                    | N/A     | No     |
+| override_dtbp_checks      | Boolean |                                                                    | N/A     | No     |
 
 **Request sample**
 
@@ -197,7 +195,7 @@ This returns the work status and related information.
 **Request sample**
 
 ```
-curl -v https://api.robinhood.com/orders/ \
+curl -v https://api.robinhood.com/orders/?updated_at[gte]=2016-05-10 \
    -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```

@@ -76,7 +76,7 @@ curl -v https://api.robinhood.com/accounts/ \
         "updated_at": null,
         "reason": "",
         "reinstatement_date": null,
-        "reversal": null,
+        "reversal": null, 
         "state": "ok"
       },
       "cash_held_for_orders": "0.0000",
