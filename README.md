@@ -62,6 +62,7 @@ Options endpoints require an authorized client. Either old skool or OAuth will w
  - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains/`
  - [Gather paginated list of options instruments](/api/options/instruments/get.md): `GET /options/instruments/`
  - [Gather paginated list of options orders](/api/options/orders/get.md): `GET /options/orders/`
+ - [Gather data from a single options order by id](/api/options/orders/{id}/get.md): `GET /options/orders/{id}/`
 
 ## Crypto
 
