@@ -1,8 +1,8 @@
-# Get Options Market Data
+# Get Options Market Data for a list of Instruments
 
 Returns a paginated list of options data. The Greeks, etc. are here.
 
-**URL** : `/marketdata/forex/quotes/`
+**URL** : `/marketdata/options/quotes/`
 
 **Method** : `GET`
 
@@ -53,6 +53,32 @@ For a basic call by option id (UUID) like `https://api.robinhood.com/marketdata/
       "vega": "0.0103"
     }
   ]
+}
+```
+
+## Error Response
+
+**Condition** : If this endpoint is called without having logged it, it will fail.
+
+**Code** : `401 Unauthorized`
+
+**Content example** : 
+
+```json
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+
+**Condition** : Handing bad instruments will fail.
+
+**Code** : `400 Bad Request`
+
+**Content example** : 
+
+```json
+{
+    "instruments": ["Invalid instrument url(s)."]
 }
 ```
 
