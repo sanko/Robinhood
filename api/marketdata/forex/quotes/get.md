@@ -44,7 +44,6 @@ For a basic call by currency pair id (UUID) like `https://api.robinhood.com/mark
 
 For a call by symbol like `https://api.robinhood.com/marketdata/forex/quotes/?symbols=XLMUSD,BTCUSD`:
 
-
 ```json
 {
     "results": [
