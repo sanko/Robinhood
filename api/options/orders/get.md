@@ -13,7 +13,8 @@ Gather all options orders, legs, etc. with this endpoint.
 **Query constraints**
 
     - cursor - paginated list position (optional)
-    - updated_at[gte] - Date
+    - updated_at[gte] - ISO Date (optional)
+    - updated_at[lte] - ISO Date (optional)
 
 **Request sample**
 
