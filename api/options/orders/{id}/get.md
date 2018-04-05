@@ -50,7 +50,7 @@ curl -v https://api.robinhood.com/options/orders/a0b99a7a-150b-4ea9-afc8-a120831
   "chain_symbol": "DRN",
   "legs": [
     {
-      "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-4a4b83ed0593/",
+      "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-09ee3681d083/",
       "side": "sell",
       "position_effect": "close",
       "id": "ae71bb2a-488a-42c2-968e-de3f62ccb76b",

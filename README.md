@@ -67,6 +67,8 @@ Options endpoints require an authorized client. Either old skool or OAuth will w
  - [Gather paginated list of options orders](/api/options/orders/get.md): `GET /options/orders/`
  - [Gather data from a single options order by id](/api/options/orders/{id}/get.md): `GET /options/orders/{id}/`
  - [Cancel a standing options order by id](/api/options/orders/{id}/cancel/post.md): `POST /options/orders/{id}/cancel/`
+ - [Gather paginated list of options positions](/api/options/positions/get.md): `POST /options/positions/`
+ - [Grab data on an options position by id](/api/options/positions/{id}/get.md): `POST /options/positions/{id}/`
 
 ## Crypto
 
