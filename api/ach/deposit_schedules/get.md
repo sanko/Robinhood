@@ -18,7 +18,8 @@ If you plan to deposit the same amount on a regular basis, you could let Robinho
 
 ```
 curl -v https://api.robinhood.com/ach/deposit_schedules/ \
-   -H "Accept: application/json"
+   -H "Accept: application/json" \
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```
 
 ## Success Responses

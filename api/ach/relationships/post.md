@@ -24,7 +24,7 @@ The following must not be empty or null.
 
 ```json
 {
-    "account": "https://api.robinhood.com/accounts/5QT72283/"
+    "account": "https://api.robinhood.com/accounts/9BT309AV/"
     "bank_routing_number": "026009593",
     "bank_account_number": "009872784317963",
     "bank_account_type": "checking",
@@ -42,7 +42,7 @@ curl -v https://api.robinhood.com/ach/relationships/ \
     bank_account_number=009872784317963& \
     bank_account_type=checking& \
     bank_account_holder_name='John Smith' \
-    account=https://api.robinhood.com/accounts/5QT72283/"
+    account=https://api.robinhood.com/accounts/9BT309AV/"
 ```
 
 ## Success Responses
@@ -55,7 +55,7 @@ curl -v https://api.robinhood.com/ach/relationships/ \
 
 ```json
 {
-  "account": "https://api.robinhood.com/accounts/5QT72283/",
+  "account": "https://api.robinhood.com/accounts/9BT309AV/",
   "verification_method": "micro_deposits",
   "verify_micro_deposits": null,
   "url": "https://api.robinhood.com/ach/relationships/093cb71a-c15e-45cd-a5fb-dac83bcd9174/",

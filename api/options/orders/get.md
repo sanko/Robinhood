@@ -20,7 +20,7 @@ Gather all options orders, legs, etc. with this endpoint.
 
 ```
 curl -v https://api.robinhood.com/options/orders/ \
-   -H "Accept: application/json"
+   -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"   
 ```
 
