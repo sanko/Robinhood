@@ -26,7 +26,7 @@ Page one of full list:
 
 ```
 curl -v https://api.robinhood.com/options/instruments/ \
-   -H "Accept: application/json"
+   -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```
 
@@ -34,7 +34,7 @@ $SPY calls:
 
 ```
 curl -v https://api.robinhood.com/options/instruments/?ids=73f75306-ad07-4734-972b-22ab9dec6693 \
-   -H "Accept: application/json"
+   -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```
 

@@ -63,6 +63,9 @@ All quote are served from the base url `https://api.robinhood.com/`. Crypto quot
  - [Get a List of Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/get.md): `GET /marketdata/forex/quotes/`
  - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
  - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
+ - [Get options market data for a list of Instruments](/api/marketdata/options/get.md): `GET /marketdata/options/`
+ - [Get options market data for a single Instrument](/api/marketdata/options/{id}/get.md): `GET /marketdata/options/{id}/`
+ - [Get options historical data for a single Instrument](/api/marketdata/options/historicals/{id}/get.md): `GET /marketdata/options/historicals/{id}/`
 
 ## Instruments
 
@@ -75,8 +78,16 @@ Stocks and ETFs are plain ol' instruments and are served from the base url `http
 
 Options endpoints require an authorized client. Either old skool or OAuth will work.
 
+ - [Find out the maximum option level supported by your account](/api/options/suitability/get.md): `GET /options/suitability/`
  - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains/`
  - [Gather paginated list of options instruments](/api/options/instruments/get.md): `GET /options/instruments/`
+ - [Gather an options instrument by id](/api/options/instruments/{id}/get.md): `GET /options/instruments/{id}/`
+ - [Gather paginated list of options orders](/api/options/orders/get.md): `GET /options/orders/`
+ - [Gather data from a single options order by id](/api/options/orders/{id}/get.md): `GET /options/orders/{id}/`
+ - [Place an options order](/api/options/orders/post.md): `POST /options/orders/`
+ - [Cancel a standing options order by id](/api/options/orders/{id}/cancel/post.md): `POST /options/orders/{id}/cancel/`
+ - [Gather paginated list of options positions](/api/options/positions/get.md): `POST /options/positions/`
+ - [Grab data on an options position by id](/api/options/positions/{id}/get.md): `POST /options/positions/{id}/`
 
 ## Crypto
 
