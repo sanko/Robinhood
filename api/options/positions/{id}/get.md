@@ -18,7 +18,8 @@ Gather options data for a particular position.
 
 ```
 curl -v https://api.robinhood.com/options/positions/d2ca6000-0d31-4360-8587-00ac098390ab/ \
-   -H "Accept: application/json"
+   -H "Accept: application/json" \
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"   
 ```
 
 ## Success Responses

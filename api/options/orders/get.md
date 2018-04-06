@@ -21,6 +21,7 @@ Gather all options orders, legs, etc. with this endpoint.
 ```
 curl -v https://api.robinhood.com/options/orders/ \
    -H "Accept: application/json"
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"   
 ```
 
 ## Success Responses
@@ -55,7 +56,7 @@ curl -v https://api.robinhood.com/options/orders/ \
       "chain_symbol": "DRN",
       "legs": [
         {
-          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-4a4b83ed0593/",
+          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-09ee3681d083/",
           "side": "sell",
           "position_effect": "close",
           "id": "ae71bb2a-488a-42c2-968e-de3f62ccb76b",
@@ -87,7 +88,7 @@ curl -v https://api.robinhood.com/options/orders/ \
       "chain_symbol": "DRN",
       "legs": [
         {
-          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-4a4b83ed0593/",
+          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-09ee3681d083/",
           "side": "sell",
           "position_effect": "close",
           "id": "ded3327e-16a2-4612-a979-ad3490298521",
@@ -119,7 +120,7 @@ curl -v https://api.robinhood.com/options/orders/ \
       "chain_symbol": "DRN",
       "legs": [
         {
-          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-4a4b83ed0593/",
+          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-09ee3681d083/",
           "side": "sell",
           "position_effect": "close",
           "id": "abc903ac-93f6-43ff-bf40-adc503918098",
@@ -151,7 +152,7 @@ curl -v https://api.robinhood.com/options/orders/ \
       "chain_symbol": "DRN",
       "legs": [
         {
-          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-4a4b83ed0593/",
+          "option": "https://api.robinhood.com/options/instruments/c14c663a-25d8-49c5-bfe6-09ee3681d083/",
           "side": "buy",
           "position_effect": "open",
           "id": "aff39a32-3282-47e2-8338-12de83746291",

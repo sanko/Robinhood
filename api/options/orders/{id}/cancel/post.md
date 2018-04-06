@@ -18,7 +18,8 @@ Cancel an options order.
 
 ```
 curl -X POST -v https://api.robinhood.com/options/orders/a0b99a7a-150b-4ea9-afc8-a12083190acd/cancel/ \
-   -H "Accept: application/json"
+   -H "Accept: application/json" \
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"   
 ```
 
 ## Success Responses

@@ -23,7 +23,8 @@ Gather historical data for an options instrument.
 
 ```
 curl -v https://api.robinhood.com/marketdata/options/historicals/04fe3b28-f74d-47cd-a0ae-a5a140ad37c1/?interval=month \
-   -H "Accept: application/json"
+   -H "Accept: application/json" \
+   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"   
 ```
 
 ## Success Responses
