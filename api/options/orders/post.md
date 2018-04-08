@@ -30,6 +30,31 @@ Everything is required.
   - `type` - `limit` or `market`
   - `trigger` - `immediate`
 
+**Data constraints example**
+
+```json
+{
+  "account": "https://api.robinhood.com/accounts/9BT309AV/",
+  "direction": "debit",
+  "legs": [
+    {
+      "option": "https://api.robinhood.com/options/instruments/75d802da-b5a3-4554-a623-21f5683487e2/",
+      "position_effect": "open",
+      "ratio_quantity": 1,
+      "side": "buy"
+    }
+  ],
+  "override_day_trade_checks": false,
+  "override_dtbp_checks": false,
+  "price": 0.05,
+  "quantity": 1,
+  "ref_id": "aaccaacc-c0c5-4618-c0c5-3618c0c53618",
+  "time_in_force": "gfd",
+  "trigger": "immediate",
+  "type": "limit"
+}
+```
+
 **Request sample**
 
 ```
@@ -113,8 +138,18 @@ Attempt to buy into credit:
 }
 ```
 
+Try to send a price that didn't match for the price. Like, 5 cent increments on options below $3:
+
 ```json
 { 
     detail => "Price does not satisfy the min tick value."
+}
+```
+
+Send a buy order with `type` set to `market`:
+
+```json
+{ 
+    detail => "We don't support market orders that include buys."
 }
 ```
