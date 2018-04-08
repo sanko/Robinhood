@@ -55,11 +55,12 @@ You gotta have at least one account attached to your Robinhood account to move m
  - [Gather list of scheduled deposits](/api/ach/deposit_schedules/get.md): `GET /ach/deposit_schedules/`
  - [Cancel a scheduled deposit](/api/ach/deposit_schedules/{id}/delete.md): `DELETE /ach/deposit_schedules/{id}/`
 
-## Quote Data
+## Market Data
 
 All quote are served from the base url `https://api.robinhood.com/`. Crypto quotes require login to access.
 
- - [Gather Quote Data by Stock Ticker Symbol](/api/quotes/{symbol}/get.md): `GET /quotes/{symbol}/`
+ - [Gather quote data for a single stock or ETF by ticker symbol](/api/marketdata/quotes/{symbol}/get.md): `GET /marketdata/quotes/{symbol}/`
+ - [Gather quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/quotes/get.md): `GET /marketdata/quotes/`
  - [Get a List of Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/get.md): `GET /marketdata/forex/quotes/`
  - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
  - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
