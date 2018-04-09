@@ -28,9 +28,10 @@ Table of Contents:
 
 Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
-## Accounts
+## Account and User Data
 
  - [Gather your list of brokerage accounts](/api/accounts/get.md): `GET /accounts/`
+ - [Gather paginated list of relevant dividends](/api/dividends/get.md): `GET /dividends/`
 
 ## Authorization
 
