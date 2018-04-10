@@ -16,8 +16,6 @@ Grab the list of expected dividends for your positions.
 
 **Request samples**
 
-Full list:
-
 ```
 curl -v https://api.robinhood.com/dividends/e9187acd-eaa4-afed-e428-1987af39afcc/ \
    -H "Accept: application/json" \

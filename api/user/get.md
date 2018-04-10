@@ -12,8 +12,6 @@ Grab very basic info about your user account.
 
 **Request samples**
 
-Full list:
-
 ```
 curl -v https://api.robinhood.com/user/ \
    -H "Accept: application/json" \
