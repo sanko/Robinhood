@@ -30,6 +30,7 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 ## Account and User Data
 
+ - [Gather basic user account information](/api/user/get.md): `GET /user/`
  - [Gather your list of brokerage accounts](/api/accounts/get.md): `GET /accounts/`
  - [Gather paginated list of relevant dividend payments](/api/dividends/get.md): `GET /dividends/`
  - [Gather data for a single dividend payment](/api/dividends/{id}/get.md): `GET /dividends/{id}/`
