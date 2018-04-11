@@ -473,64 +473,6 @@ curl -v https://api.robinhood.com/user/employment/ \
 
 # Gather Investment Profile Data About the Account Holder
 
-This returns answers to the basic investing experience survery presented during registration.
-
-**Method**
-
-| URI                                        | HTTP Method | Authentication |
-|--------------------------------------------|-------------|----------------|
-| api.robinhood.com/user/investment_profile/ | GET         | *Yes*          |
-
-**Fields**
-
-AFAIK, there are none.
-
-**Request sample**
-
-```
-curl -v https://api.robinhood.com/user/investment_profile/ \
-   -H "Accept: application/json" \
-   -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
-```
-
-**Response**
-
-| Key          	    	| Type     | Description |
-|-----------------------|----------|-------------|
-| annual_income         | String   | `0_24999`, `25000_39999`, `40000_49999`, `50000_74999`, `75000_99999`, `100000_199999`, `200000_299999`, `300000_499999`, `500000_1199999`, or `1200000_inf` |
-| investment_experience | String   | `extensive_investment_exp`, `good_investment_exp`, `limited_investment_exp`, or `no_investment_exp` |
-| investment_objective 	| String   | `cap_preserve_invest_obj`, `income_invest_obj`, `growth_invest_obj`, `speculation_invest_obj`, `other_invest_obj` |
-| liquid_net_worth      | String   | `0_24999`, `25000_39999`, `40000_49999`, `50000_99999`, `100000_199999`, `200000_249999`, `250000_499999`, `500000_999999`, or `1000000_inf` |
-| liquidity_needs 	    | String   | `not_important_liq_need`, `somewhat_important_liq_need`, or `very_important_liq_need` |
-| risk_tolerance 	    | String   | `low_risk_tolerance`, `med_risk_tolerance`, or `high_risk_tolerance` |
-| source_of_funds       | String   | `savings_personal_income`, `pension_retirement`, `insurance_payout`, `inheritance`, `gift`, `sale_business_or_property`, or `other` |
-| suitability_verified 	| Boolean  | |
-| tax_bracket			| String   | `0_pct`, `20_pct`, `25_pct`, `28_pct`, `33_pct`, `35_pct`, or `39_6_pct` |
-| time_horizon			| String   | `short_time_horizon`, `med_time_horizon`, or `long_time_horizon` |
-| total_net_worth		| String   | `0_24999`, `25000_49999`, `50000_64999`, `65000_99999`, `100000_149999`, `150000_199999`, `250000_499999`, `500000_999999`, or `1000000_inf` |
-| updated_at    		| ISO 8601 | When was any of this information last modified |
-| user 					| URL 	   | Link back to the `/user/` endpoint |
-
-**Response sample**
-
-```
-{
-    "annual_income": "40000_49999",
-    "investment_experience": "good_investment_exp",
-    "updated_at": "2016-01-06T14:35:47.015871Z",
-    "risk_tolerance": "high_risk_tolerance",
-    "total_net_worth": "100000_149999",
-    "liquidity_needs": "very_important_liq_need",
-    "investment_objective": "other_invest_obj",
-    "source_of_funds": "savings_personal_income",
-    "user": "https://api.robinhood.com/user/",
-    "suitability_verified": true,
-    "tax_bracket": "",
-    "time_horizon": "long_time_horizon",
-    "liquid_net_worth": "100000_199999"
-}
-```
-
 # Gather Verifiable User Information
 
 Use this endpoint to get personal information that may be used to verify a person's identity.

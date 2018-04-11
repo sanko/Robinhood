@@ -36,6 +36,9 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Gather your list of brokerage accounts](/api/accounts/get.md): `GET /accounts/`
  - [Gather paginated list of relevant dividend payments](/api/dividends/get.md): `GET /dividends/`
  - [Gather data for a single dividend payment](/api/dividends/{id}/get.md): `GET /dividends/{id}/`
+ - [Grab user's investment experience information](/api/user/investment_profile/get.md): `GET /user/investment_profile/`
+ - [Partially update user's investment experience information](/api/user/investment_profile/patch.md): `PATCH /user/investment_profile/`
+ - [Fully replace user's investment experience information](/api/user/investment_profile/put.md): `PUT /user/investment_profile/`
 
 ## Authorization
 
