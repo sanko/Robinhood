@@ -22,8 +22,8 @@ Buy and sell shares of securities!
 
 | Parameter     | Type   | Description                                         		          | Default |Required|
 |---------------|--------|--------------------------------------------------------------------|---------|--------|
-| account       | URL    | Account to make this order with      				              | N/A     | *Yes*  |
-| instrument    | URL    | Instrument URL of the security you're attempting to buy or sell    | N/A     | *Yes*  |
+| account       | String | Account URL to make this order with      				                | N/A     | *Yes*  |
+| instrument    | String | Instrument URL of the security you're attempting to buy or sell    | N/A     | *Yes*  |
 | symbol        | String | The ticker symbol of the security you're attempting to buy or sell | N/A     | *Yes*  |
 | type 		    | String | Order type: `market` or `limit`                                    | N/A     | *Yes*  |
 | time_in_force | String | `gfd`, `gtc`, `ioc`, or `opg`                                 | N/A     | *Yes*  |
@@ -34,8 +34,8 @@ Buy and sell shares of securities!
 | side          | String | `buy` or `sell`                                                    | N/A     | *Yes*  |
 | client_id     | String | Only available for OAuth applications                              | N/A     | No     |
 | extended_hours | Boolean | Would/Should order execute when exchanges are closed             | N/A     | No     |
-| override_day_trade_checks | Boolean |                                                       | N/A     | No     |
-| override_dtbp_checks | Boolean |                                                            | N/A     | No     |
+| override_day_trade_checks | Boolean |                                                       | false   | No     |
+| override_dtbp_checks | Boolean |                                                            | false   | No     |
 
 *Note: `time_in_force` `opg` is not supported during `extended_hours`*
 
