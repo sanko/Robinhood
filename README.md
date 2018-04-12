@@ -42,6 +42,9 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Grab extra info about the user](/api/user/additional_info/get.md): `GET /user/additional_info/`
  - [Partially update extra info about the user](/api/user/additional_info/patch.md): `PATCH /user/additional_info/`
  - [Fully replace extra info about the user](/api/user/additional_info/put.md): `PUT /user/additional_info/`
+ - [Grab employment info about the user](/api/user/employment/get.md): `GET /user/employment/`
+ - [Partially update employment info for the user](/api/user/employment/patch.md): `PATCH /user/employment/`
+ - [Fully replace employment info for the user](/api/user/employment/put.md): `PUT /user/employment/`
 
 ## Authorization
 
