@@ -39,6 +39,9 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Grab user's investment experience information](/api/user/investment_profile/get.md): `GET /user/investment_profile/`
  - [Partially update user's investment experience information](/api/user/investment_profile/patch.md): `PATCH /user/investment_profile/`
  - [Fully replace user's investment experience information](/api/user/investment_profile/put.md): `PUT /user/investment_profile/`
+ - [Grab extra info about the user](/api/user/additional_info/get.md): `GET /user/additional_info/`
+ - [Partially update extra info about the user](/api/user/additional_info/patch.md): `PATCH /user/additional_info/`
+ - [Fully replace extra info about the user](/api/user/additional_info/put.md): `PUT /user/additional_info/`
 
 ## Authorization
 

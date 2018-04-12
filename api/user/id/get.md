@@ -13,7 +13,7 @@ Find the account's ID and attached username.
 **Request samples**
 
 ```
-curl -v https://api.robinhood.com/user/id/ \
+curl -v https://api.robinhood.com/user/ \
    -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```

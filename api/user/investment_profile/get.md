@@ -1,4 +1,4 @@
-# User's Investmening Experience
+# User's Investing Experience
 
 This returns answers to the basic investing experience survery presented during registration.
 

@@ -1,4 +1,4 @@
-# Fully Update a User's Investmening Experience
+# Fully Update a User's Investing Experience
 
 Use this when the user needs to update a part of the basic investing experience survery presented during registration.
 
