@@ -117,6 +117,12 @@ Crypto endpoints require OAuth2. This will make things hard for 3rd party use un
  - [Cancel an Active Crypto Order](/nummus/orders/{id}/cancel/post.md): `POST /orders/{id}/cancel/`
  - [Place Crypto Order](/nummus/orders/post.md): `POST /orders/`
 
+## Midlands
+
+`https://midlands.robinhood.com/` hosts utility endpoints and things that eventually find their way elsewhere.
+
+  - [Search Robinhood With a Wide Net](/midlands/search/get.md): `GET /search/`
+
 # Introduction
 
 [Robinhood](http://robinhood.com/) is a commission-free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
