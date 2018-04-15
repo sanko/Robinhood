@@ -137,10 +137,6 @@ Before I go too far, I must say that this is a big, messy work in progress. I'll
 
 Oh, and I do not work with or for Robinhood Financial, LLC.
 
-## Development
-
-The owners of the [/r/Robinhood subreddit](https://reddit.com/r/Robinhood/) have invited us to join their [official Discord server](https://discord.gg/robinhood) where a new developer chat room has been created. You'll find me idle there most of the time.
-
 # API Security
 
 The HTTPS protocol is used to access the Robinhood API. Transactions require security because most calls transmit actual account informaion. SSL Pinning is used in the official Android and iOS apps to prevent MITM attacks; you would be wise to do the same at the very least.
