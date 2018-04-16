@@ -29,7 +29,10 @@ Data is returned as a JSON structure and looks like this call to `https://api.ro
       "previous_close_date": "2016-03-17",
       "symbol": "MSFT",
       "trading_halted": false,
-      "updated_at": "2016-03-18T15:45:28Z"
+      "has_traded": true,
+      "last_trade_price_source": "consolidated",
+      "updated_at": "2016-03-18T15:45:28Z",
+      "instrument": "https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79ffa/"
     }
 
 # Gather Quote Data for Multiple Ticker Symbols in a Single API Call
