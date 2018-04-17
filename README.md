@@ -1,3 +1,5 @@
+# **NOTICE: I do not need pull requests or other contributions of endopoints!
+
 # Unofficial Documentation of Robinhood Trade's Private API
 
 Table of Contents:
