@@ -2,11 +2,9 @@
 
 ## Prerequisites
 
-- We realize there is a lot of data requested here. We ask only that you do your best to provide as much information as possible so we can better help you.
 - Read the [contributing guidelines](https://github.com/sanko/robinhood/blob/master/contributing.md).
 - Support questions are better asked in one of the following locations:
-	- [Discord](https://discord.gg/5vH7CUQ)
-	- [Stack Overflow](https://stackoverflow.com/questions/tagged/robinhood)
+  - [Stack Overflow](https://stackoverflow.com/questions/tagged/robinhood)
   - [Reddit](https://reddit.com/r/robinhood)
 - Ensure the issue isn't already reported.
 - Should be reproducible with the raw API.
@@ -15,7 +13,7 @@
 
 ## Description
 
-If this is a feature request, you may explain why it should be added but remember that this is an unofficial project. I have very little sway.
+If this is a feature request, you may explain why it should be added but remember that this is an unofficial project. I have very little sway. If you're submitting or suggesting an undocumented endpoint, don't.
 
 For bug reports, please provide as much *relevant* info as possible.
 
