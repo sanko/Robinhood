@@ -75,6 +75,8 @@ All quote are served from the base url `https://api.robinhood.com/`. Crypto quot
 
  - [Gather quote data for a single stock or ETF by ticker symbol](/api/marketdata/quotes/{symbol}/get.md): `GET /marketdata/quotes/{symbol}/`
  - [Gather quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/quotes/get.md): `GET /marketdata/quotes/`
+ - [Gather historical quote data for a single stock or ETF by ticker symbol](/api/marketdata/historicals/{symbol}/get.md): `GET /marketdata/historicals/{symbol}/`
+ - [Gather historical quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/historicals/get.md): `GET /marketdata/historicals/`
  - [Get a List of Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/get.md): `GET /marketdata/forex/quotes/`
  - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
  - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
