@@ -16,8 +16,8 @@ Gather historical data for an options instrument.
 
 **Query constraints**
 
-    - interval - days, week, or month (required)
-    - span - year, 5year, 10year (optional)
+    - interval - hour, day, week, or month (required)
+    - span - week, year, 5year, 10year (optional)
 
 **Request sample**
 
