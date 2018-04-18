@@ -1,4 +1,4 @@
-# **NOTICE: I do not need pull requests or other contributions of endopoints!
+# **NOTICE: I do not need pull requests or other contributions of end~o~points!
 
 # Unofficial Documentation of Robinhood Trade's Private API
 
