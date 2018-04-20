@@ -26,10 +26,10 @@ curl -v https://api.robinhood.com/options/chains/ \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```
 
-Options related to a particular underlying instrument:
+Options chains related to a particular underlying instrument:
 
 ```
-curl -v https://api.robinhood.com/options/chains/?equity_instrument_ids=6a17083e-2867-4a20-9b78-a0a46b422279 \
+curl -v https://api.robinhood.com/options/chains/?ids=6a17083e-2867-4a20-9b78-a0a46b422279 \
    -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```

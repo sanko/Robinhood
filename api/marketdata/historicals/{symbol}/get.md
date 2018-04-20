@@ -16,8 +16,8 @@ The past is the present.
 
 **Query constraints**
 
-    - interval - hour, day, week, or month (required)
-    - span - week, year, 5year, 10year (optional)
+    - interval - `hour, `day`, `week, or `month` (required)
+    - span - `week`, `year`, `5year`, `10year` (optional)
     - bounds - `regular`, `extended`, or `trading` (optional)
 
 **Request sample**
