@@ -12,7 +12,7 @@ Gather options positions data.
 
 **Query constraints**
 
-	- chain_ids - comma separated list of UUID
+	  - chain_ids - comma separated list of UUID (optional)
     - type - long or short (optional)
     - cursor - pagination placeholder (optional)
 
