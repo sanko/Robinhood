@@ -69,27 +69,21 @@ You gotta have at least one account attached to your Robinhood account to move m
  - [Gather list of scheduled deposits](/api/ach/deposit_schedules/get.md): `GET /ach/deposit_schedules/`
  - [Cancel a scheduled deposit](/api/ach/deposit_schedules/{id}/delete.md): `DELETE /ach/deposit_schedules/{id}/`
 
-## Market Data
-
-All quote are served from the base url `https://api.robinhood.com/`. Crypto quotes require login to access.
-
- - [Gather quote data for a single stock or ETF by ticker symbol](/api/marketdata/quotes/{symbol}/get.md): `GET /marketdata/quotes/{symbol}/`
- - [Gather quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/quotes/get.md): `GET /marketdata/quotes/`
- - [Gather historical quote data for a single stock or ETF by ticker symbol](/api/marketdata/historicals/{symbol}/get.md): `GET /marketdata/historicals/{symbol}/`
- - [Gather historical quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/historicals/get.md): `GET /marketdata/historicals/`
- - [Get a List of Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/get.md): `GET /marketdata/forex/quotes/`
- - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
- - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
- - [Get options market data for a list of Instruments](/api/marketdata/options/get.md): `GET /marketdata/options/`
- - [Get options market data for a single Instrument](/api/marketdata/options/{id}/get.md): `GET /marketdata/options/{id}/`
- - [Get options historical data for a single Instrument](/api/marketdata/options/historicals/{id}/get.md): `GET /marketdata/options/historicals/{id}/`
-
-## Instruments
+## Equity Instruments
 
 Stocks and ETFs are plain ol' instruments and are served from the base url `https://api.robinhood.com/`. You'll need the data from here to place an order but these endpoints do not typically require authoization tokens.
 
  - [Gather paginated list of instruments](/api/instruments/get.md): `GET /instruments/`
  - [Gather data on a single instrument](/api/instruments/{id}/get.md): `GET /instruments/{id}/`
+
+### Market Data
+
+Quote data is served from the base url `https://api.robinhood.com/`.
+
+ - [Gather quote data for a single stock or ETF by ticker symbol](/api/marketdata/quotes/{symbol}/get.md): `GET /marketdata/quotes/{symbol}/`
+ - [Gather quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/quotes/get.md): `GET /marketdata/quotes/`
+ - [Gather historical quote data for a single stock or ETF by ticker symbol](/api/marketdata/historicals/{symbol}/get.md): `GET /marketdata/historicals/{symbol}/`
+ - [Gather historical quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/historicals/get.md): `GET /marketdata/historicals/`
 
 ## Options
 
@@ -105,6 +99,15 @@ Options endpoints require an authorized client. Either old skool or OAuth will w
  - [Cancel a standing options order by id](/api/options/orders/{id}/cancel/post.md): `POST /options/orders/{id}/cancel/`
  - [Gather paginated list of options positions](/api/options/positions/get.md): `POST /options/positions/`
  - [Grab data on an options position by id](/api/options/positions/{id}/get.md): `POST /options/positions/{id}/`
+
+### Market Data
+
+Quote data is served from the base url `https://api.robinhood.com/`.
+
+ - [Get market data for a list of options Instruments](/api/marketdata/options/get.md): `GET /marketdata/options/`
+ - [Get market data for a single options Instrument](/api/marketdata/options/{id}/get.md): `GET /marketdata/options/{id}/`
+ - [Get historical data for a single options Instrument](/api/marketdata/options/historicals/{id}/get.md): `GET /marketdata/options/historicals/{id}/`
+ - [Get historical data for a multiple options Instrument](/api/marketdata/options/historicals/{id}/get.md): `GET /marketdata/options/historicals/{id}/`
 
 ## Crypto
 
@@ -124,6 +127,14 @@ Crypto endpoints require OAuth2. This will make things hard for 3rd party use un
  - [Get List of Crypto Orders](/nummus/orders/get.md): `GET /orders/`
  - [Cancel an Active Crypto Order](/nummus/orders/{id}/cancel/post.md): `POST /orders/{id}/cancel/`
  - [Place Crypto Order](/nummus/orders/post.md): `POST /orders/`
+
+### Market Data
+
+Quote data is served from the base url `https://api.robinhood.com/`.
+
+ - [Get a List of Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/get.md): `GET /marketdata/forex/quotes/`
+ - [Get Crypto Quotes by ID or Symbol](/api/marketdata/forex/quotes/{symbolOrId}/get.md): `GET /marketdata/forex/quotes/{symbolOrId}/`
+ - [Get Historical Crypto Quote Data](/api/marketdata/forex/historicals/{id}/get.md): `GET /marketdata/forex/historicals/{id}/`
 
 ## Midlands
 
