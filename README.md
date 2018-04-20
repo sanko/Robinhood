@@ -135,9 +135,6 @@ Crypto endpoints require OAuth2. This will make things hard for 3rd party use un
 
 [Robinhood](http://robinhood.com/) is a commission-free, online securities brokerage. As you would expect, being an online service means everything is handled through a request that is made to a specific URL.
 
-
-Oh, and I do not work with or for Robinhood Financial, LLC.
-
 # API Security
 
 The HTTPS protocol is used to access the Robinhood API. Transactions require security because most calls transmit actual account informaion. SSL Pinning is used in the official Android and iOS apps to prevent MITM attacks; you would be wise to do the same at the very least.
