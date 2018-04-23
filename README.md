@@ -50,11 +50,20 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 If you plan to do much beyond requesting quote data, you'll need to log in and use an authorization token.
 
+ - [Request password reset](/api/password_reset/request/post.md): `POST /password_reset/request/`
+ - [Complete password reset](/api/password_reset/post.md): `POST /password_reset/`
+
+### OAuth2
+
+Crypto and Options both require OAuth2 support.
+
+ - [Log in and refresh OAuth2 token](/api/oauth2/token/post.md) `POST /oauth2/token/`
+
+### Old Skool
+
  - [Log in (old skool)](/api/api-token-auth/post.md): `POST /api-token-auth/`
  - [Log out (old skool)](/api/api-token-logout/post.md): `POST /api-token-logout/`
  - [Migrate old skool auth token to OAuth2](/api/oauth2/migrate_token/post.md) `POST /oauth2/migrate_token/`
- - [Request password reset](/api/password_reset/request/post.md): `POST /password_reset/request/`
- - [Complete password reset](/api/password_reset/post.md): `POST /password_reset/`
 
 ## Banking
 
