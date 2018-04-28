@@ -101,6 +101,11 @@ Quote data is served from the base url `https://api.robinhood.com/`.
  - [Gather historical quote data for a single stock or ETF by ticker symbol](/api/marketdata/historicals/{symbol}/get.md): `GET /marketdata/historicals/{symbol}/`
  - [Gather historical quote data for a list of stocks and ETFs by ticker symbol or instrument ID](/api/marketdata/historicals/get.md): `GET /marketdata/historicals/`
 
+### Orders
+
+ - [Gather order by ID](/api/orders/{id}/get.md): `GET /orders/{id}/`
+ - [Gather list of orders](/api/orders/get.md): `GET /orders/`
+
 ## Options
 
 Options endpoints require an authorized client. Either old skool or OAuth will work.
