@@ -48,6 +48,10 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Partially update employment info for the user](/api/user/employment/patch.md): `PATCH /user/employment/`
  - [Fully replace employment info for the user](/api/user/employment/put.md): `PUT /user/employment/`
 
+### Positions
+
+ - [Gather a list of equity positions](/api/positions/{accountID}/{id}/get.md): `PUT /positions/{accountID}/{id}/`
+
 ## Authorization
 
 If you plan to do much beyond requesting quote data, you'll need to log in and use an authorization token.

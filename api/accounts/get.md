@@ -109,4 +109,3 @@ curl -v https://api.robinhood.com/accounts/ \
   "detail": "Authentication credentials were not provided."
 }
 ```
-
