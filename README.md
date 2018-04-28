@@ -50,6 +50,7 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 ### Positions
 
+ - [Get equity position by id](/api/positions/get.md): `PUT /positions/`
  - [Gather a list of equity positions](/api/positions/{accountID}/{id}/get.md): `PUT /positions/{accountID}/{id}/`
 
 ## Authorization
