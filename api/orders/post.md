@@ -139,3 +139,11 @@ Skim thouse millionths of a cent:
 	"price": ["Prices can't be more than 4 decimal places."]
 }
 ```
+
+Try to create an order on zero shares:
+
+```json
+{
+	"quantity": ["Ensure this value is greater than 0."]
+}
+```
