@@ -4,7 +4,7 @@ Buy, sell, long, short, you know what to do.
 
 **URL** : `/options/orders/`
 
-**Method** : `GET`
+**Method** : `POST`
 
 **Auth required** : YES
 

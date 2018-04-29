@@ -103,10 +103,12 @@ Quote data is served from the base url `https://api.robinhood.com/`.
 
 ### Orders
 
- - [Gather order by ID](/api/orders/{id}/get.md): `GET /orders/{id}/`
- - [Gather list of orders](/api/orders/get.md): `GET /orders/`
+ - [Gather paginated list of equity orders](/api/orders/get.md): `GET /orders/`
+ - [Gather data from a single equity order by id](/api/orders/{id}/get.md): `GET /orders/{id}/`
+ - [Place an equity order](/api/orders/post.md): `POST /orders/`
+ - [Cancel a standing equity order by id](/api/orders/{id}/cancel/post.md): `POST /orders/{id}/cancel/`
 
-## Options
+## Options Instruments
 
 Options endpoints require an authorized client. Either old skool or OAuth will work.
 
@@ -114,10 +116,6 @@ Options endpoints require an authorized client. Either old skool or OAuth will w
  - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains/`
  - [Gather paginated list of options instruments](/api/options/instruments/get.md): `GET /options/instruments/`
  - [Gather an options instrument by id](/api/options/instruments/{id}/get.md): `GET /options/instruments/{id}/`
- - [Gather paginated list of options orders](/api/options/orders/get.md): `GET /options/orders/`
- - [Gather data from a single options order by id](/api/options/orders/{id}/get.md): `GET /options/orders/{id}/`
- - [Place an options order](/api/options/orders/post.md): `POST /options/orders/`
- - [Cancel a standing options order by id](/api/options/orders/{id}/cancel/post.md): `POST /options/orders/{id}/cancel/`
  - [Gather paginated list of options positions](/api/options/positions/get.md): `POST /options/positions/`
  - [Grab data on an options position by id](/api/options/positions/{id}/get.md): `POST /options/positions/{id}/`
 
@@ -129,6 +127,14 @@ Quote data is served from the base url `https://api.robinhood.com/`.
  - [Get market data for a single options Instrument](/api/marketdata/options/{id}/get.md): `GET /marketdata/options/{id}/`
  - [Get historical data for a single options Instrument](/api/marketdata/options/historicals/{id}/get.md): `GET /marketdata/options/historicals/{id}/`
  - [Get historical data for a multiple options Instrument](/api/marketdata/options/historicals/{id}/get.md): `GET /marketdata/options/historicals/{id}/`
+
+### Orders
+
+ - [Gather paginated list of options orders](/api/options/orders/get.md): `GET /options/orders/`
+ - [Gather data from a single options order by id](/api/options/orders/{id}/get.md): `GET /options/orders/{id}/`
+ - [Place an options order](/api/options/orders/post.md): `POST /options/orders/`
+ - [Cancel a standing options order by id](/api/options/orders/{id}/cancel/post.md): `POST /options/orders/{id}/cancel/`
+
 
 ## Crypto
 
