@@ -131,3 +131,11 @@ Try to buy more than you can afford:
 	"detail": "You can only purchase 30 shares of MSFT."
 }
 ```
+
+Skim thouse millionths of a cent:
+
+```json
+{
+	"price": ["Prices can't be more than 4 decimal places."]
+}
+```
