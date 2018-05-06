@@ -132,11 +132,19 @@ Try to buy more than you can afford:
 }
 ```
 
-Skim thouse millionths of a cent:
+Skim those millionths of a cent:
 
 ```json
 {
 	"price": ["Prices can't be more than 4 decimal places."]
+}
+```
+
+Forget NMS:
+
+```json
+{
+	"price": ["Prices above $1.00 can't have subpenny increments."]
 }
 ```
 
