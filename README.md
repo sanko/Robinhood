@@ -53,6 +53,10 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Get equity position by id](/api/positions/get.md): `PUT /positions/`
  - [Gather a list of equity positions](/api/positions/{accountID}/{id}/get.md): `PUT /positions/{accountID}/{id}/`
 
+### Watchlists
+
+ - [Gather list of watchlists](/api/watchlists/get.md): `GET /watchlists/`
+
 ## Authorization
 
 If you plan to do much beyond requesting quote data, you'll need to log in and use an authorization token.
