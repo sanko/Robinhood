@@ -95,6 +95,8 @@ Stocks and ETFs are plain ol' instruments and are served from the base url `http
 
  - [Gather paginated list of instruments](/api/instruments/get.md): `GET /instruments/`
  - [Gather data on a single instrument](/api/instruments/{id}/get.md): `GET /instruments/{id}/`
+ - [Gather a list of instruments' fundamantal data](/api/fundamentals/get.md): `GET /fundamentals/`
+ - [Gather fundamental data on a single instrument](/api/fundamentals/{symbol}/get.md): `GET /fundamentals/{symbol}/`
 
 ### Market Data
 
