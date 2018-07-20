@@ -47,6 +47,7 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Grab employment info about the user](/api/user/employment/get.md): `GET /user/employment/`
  - [Partially update employment info for the user](/api/user/employment/patch.md): `PATCH /user/employment/`
  - [Fully replace employment info for the user](/api/user/employment/put.md): `PUT /user/employment/`
+ - [Get portfolio values](/api/portfolios/{accountId}/): `GET /portfolios/{accountId}/`
 
 ### Positions
 

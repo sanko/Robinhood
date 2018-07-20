@@ -33,7 +33,7 @@ curl -v https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79f
 
 **Code** : `200 OK`
 
-**Content example** : 
+**Content example** :
 
 Grab an instrument:
 
