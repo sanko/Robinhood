@@ -48,6 +48,7 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Partially update employment info for the user](/api/user/employment/patch.md): `PATCH /user/employment/`
  - [Fully replace employment info for the user](/api/user/employment/put.md): `PUT /user/employment/`
  - [Get portfolio values](/api/portfolios/{accountId}/get.md): `GET /portfolios/{accountId}/`
+ - [Get portfolio values](/api/accounts/{accountId}/portfolio/get.md): `GET /accounts/{accountId}/portfolio/`
  - [Check account's ability to downgrade from margin to cash](/accounts/{accountId}/can_downgrade_to_cash/get.md): `GET /accounts/{accountId}/can_downgrade_to_cash/`
 
 ### Positions
