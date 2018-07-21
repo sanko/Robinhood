@@ -2,9 +2,9 @@
 
 Grab the full list of positions related to your account.
 
-This is the same as calling `https://api.robinhood.com/positions/{accountId}/`.
+This is the same as calling `https://api.robinhood.com/positions/{accountNumber}/`.
 
-**URL** : `/accounts/{accountId}/positions/`
+**URL** : `/accounts/{accountNumber}/positions/`
 
 **Method** : `GET`
 
@@ -20,7 +20,7 @@ This is the same as calling `https://api.robinhood.com/positions/{accountId}/`.
 
 **Path constraints**
 
-    - {accountId} - account id
+    - {accountNumber} - account id
 
 **Request samples**
 

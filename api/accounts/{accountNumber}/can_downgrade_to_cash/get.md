@@ -2,7 +2,7 @@
 
 Find out if you can downgrade this account from margin (Instant, Gold) to cash.
 
-**URL** : `/accounts/{accountId}/can_downgrade_to_cash/`
+**URL** : `/accounts/{accountNumber}/can_downgrade_to_cash/`
 
 **Method** : `GET`
 
@@ -12,7 +12,7 @@ Find out if you can downgrade this account from margin (Instant, Gold) to cash.
 
 **Path constraints**
 
-    - {accountId} - account id
+    - {accountNumber} - account id
 
 **Request samples**
 

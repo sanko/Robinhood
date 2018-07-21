@@ -2,7 +2,7 @@
 
 Grab the full list of positions related to your account.
 
-This is the same as calling `https://api.robinhood.com/accounts/{accountId}/positions/`.
+This is the same as calling `https://api.robinhood.com/accounts/{accountNumber}/positions/`.
 
 **URL** : `/positions/`
 
@@ -2947,7 +2947,7 @@ curl -v https://api.robinhood.com/positions/ \
 
 **Code** : `401 Unauthorized`
 
-**Content example** : 
+**Content example** :
 
 ```json
 {

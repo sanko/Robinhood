@@ -2,9 +2,9 @@
 
 Grab equity and margin data.
 
-This is the same as calling `https://api.robinhood.com/accounts/{accountId}/portfolio/`.
+This is the same as calling `https://api.robinhood.com/portfolios/{accountNumber}/`.
 
-**URL** : `/portfolios/{accountId}/`
+**URL** : `/accounts/{accountNumber}/portfolio/`
 
 **Method** : `GET`
 
@@ -12,14 +12,18 @@ This is the same as calling `https://api.robinhood.com/accounts/{accountId}/port
 
 **Permissions required** : None
 
+**Query constraints**
+
+    - bounds - 'trading', 'regular', or 'extended' (optional; 'trading' is default)
+
 **Path constraints**
 
-    - {accountId} - account id
+    - {accountNumber} - account id
 
 **Request samples**
 
 ```
-curl -v https://api.robinhood.com/portfolios/9BT309AV/ \
+curl -v https://api.robinhood.com/accounts/9BT309AV/portfolio \
    -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```
