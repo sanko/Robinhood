@@ -47,15 +47,16 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
  - [Grab employment info about the user](/api/user/employment/get.md): `GET /user/employment/`
  - [Partially update employment info for the user](/api/user/employment/patch.md): `PATCH /user/employment/`
  - [Fully replace employment info for the user](/api/user/employment/put.md): `PUT /user/employment/`
- - [Get portfolio values](/api/portfolios/{accountId}/get.md): `GET /portfolios/{accountId}/`
- - [Get portfolio values](/api/accounts/{accountId}/portfolio/get.md): `GET /accounts/{accountId}/portfolio/`
- - [Check account's ability to downgrade from margin to cash](/accounts/{accountId}/can_downgrade_to_cash/get.md): `GET /accounts/{accountId}/can_downgrade_to_cash/`
+ - [Get portfolio values](/api/portfolios/{accountNumber}/get.md): `GET /portfolios/{accountNumber}/`
+ - [Get historical portfolio values](/api/portfolios/historicals/{accountNumber}/get.md): `GET /portfolios/historicals/{accountNumber}/`
+ - [Get portfolio values](/api/accounts/{accountNumber}/portfolio/get.md): `GET /accounts/{accountNumber}/portfolio/`
+ - [Check account's ability to downgrade from margin to cash](/accounts/{accountNumber}/can_downgrade_to_cash/get.md): `GET /accounts/{accountNumber}/can_downgrade_to_cash/`
 
 ### Positions
 
  - [Gather a list of equity positions](/api/positions/get.md): `GET /positions/`
- - [Gather a list of equity positions](/api/accounts/{accountID}/positions/get.md): `GET /accountss/{accountID}/positions/`
- - [Get equity position by id](/api/positions/{accountID}/{id}/get.md): `GET /positions/{accountID}/{id}/`
+ - [Gather a list of equity positions](/api/accounts/{accountNumber}/positions/get.md): `GET /accountss/{accountNumber}/positions/`
+ - [Get equity position by id](/api/positions/{accountNumber}/{id}/get.md): `GET /positions/{accountNumber}/{id}/`
 
 ### Watchlists
 

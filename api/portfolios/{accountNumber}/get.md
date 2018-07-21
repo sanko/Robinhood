@@ -14,7 +14,9 @@ This is the same as calling `https://api.robinhood.com/accounts/{accountNumber}/
 
 **Query constraints**
 
-    - bounds - 'trading', 'regular', or 'extended' (optional; 'trading' is default)
+    - interval - `5minute`, `10minute`, `hour`, `day`, `week`, or `month` (required)
+    - span - `day`, `week`, `year`, `5year`, `10year` (optional)
+    - bounds - `regular`, `extended`, or `trading` (optional)
 
 **Path constraints**
 
