@@ -53,8 +53,9 @@ Things I have yet to organize are in [Unsorted.md](Unsorted.md)
 
 ### Positions
 
- - [Get equity position by id](/api/positions/get.md): `PUT /positions/`
- - [Gather a list of equity positions](/api/positions/{accountID}/{id}/get.md): `PUT /positions/{accountID}/{id}/`
+ - [Gather a list of equity positions](/api/positions/get.md): `GET /positions/`
+ - [Gather a list of equity positions](/api/accounts/{accountID}/positions/get.md): `GET /accountss/{accountID}/positions/`
+ - [Get equity position by id](/api/positions/{accountID}/{id}/get.md): `GET /positions/{accountID}/{id}/`
 
 ### Watchlists
 

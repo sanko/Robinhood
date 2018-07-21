@@ -2,9 +2,9 @@
 
 Grab the full list of positions related to your account.
 
-This is the same as calling `https://api.robinhood.com/accounts/{accountId}/positions/`.
+This is the same as calling `https://api.robinhood.com/positions/{accountId}/`.
 
-**URL** : `/positions/`
+**URL** : `/accounts/{accountId}/positions/`
 
 **Method** : `GET`
 
@@ -18,10 +18,14 @@ This is the same as calling `https://api.robinhood.com/accounts/{accountId}/posi
     - `ordering` - comma separated list of URLs
     - `cursor` - pagination placeholder
 
+**Path constraints**
+
+    - {accountId} - account id
+
 **Request samples**
 
 ```
-curl -v https://api.robinhood.com/positions/ \
+curl -v https://api.robinhood.com/accounts/9BT309AV/positions/ \
    -H "Accept: application/json" \
    -H "Authorization: Token a9a7007f890c790a30a0e0f0a7a07a0242354114"
 ```
@@ -2947,7 +2951,7 @@ curl -v https://api.robinhood.com/positions/ \
 
 **Code** : `401 Unauthorized`
 
-**Content example** : 
+**Content example** :
 
 ```json
 {
