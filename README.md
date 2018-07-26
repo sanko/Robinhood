@@ -148,6 +148,7 @@ Quote data is served from the base url `https://api.robinhood.com/`.
 
 ### Watchlists
 
+ - [Create a equity watchlist](/api/watchlists/post.md): `POST /watchlists/`
  - [Add an equity instrument to a watchlist](/api/watchlists/{name}/post.md): `POST /watchlists/{name}/`
 
 ## Crypto
