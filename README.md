@@ -146,6 +146,9 @@ Quote data is served from the base url `https://api.robinhood.com/`.
  - [Place an options order](/api/options/orders/post.md): `POST /options/orders/`
  - [Cancel a standing options order by id](/api/options/orders/{id}/cancel/post.md): `POST /options/orders/{id}/cancel/`
 
+### Watchlists
+
+ - [Add an equity instrument to a watchlist](/api/watchlists/{name}/post.md): `POST /watchlists/{name}/`
 
 ## Crypto
 

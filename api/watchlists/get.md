@@ -116,7 +116,7 @@ curl -v https://api.robinhood.com/watchlists/ \
 
 **Code** : `401 Unauthorized`
 
-**Content example** : 
+**Content example** :
 
 ```json
 {
