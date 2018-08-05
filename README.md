@@ -182,6 +182,7 @@ Quote data is served from the base url `https://api.robinhood.com/`.
 
 `https://midlands.robinhood.com/` hosts utility endpoints and things that eventually find their way elsewhere.
 
+  - [Gather Articles Related to Your Watchlist Items](/midlands/feed/get.md): `GET /feed/`
   - [Search Robinhood With a Wide Net](/midlands/search/get.md): `GET /search/`
   - [Gather Articles About an Equity Instrument by Symbol or Currency by ID](/midlands/news/get.md): `GET /news/`
   - [Gather Articles About an Equity Instrument by Symbol](/midlands/news/{symbol}/get.md): `GET /news/{symbol}/`

@@ -1148,7 +1148,7 @@ Grab Bitcoin news by currency id `https://midlands.robinhood.com/news/?currency_
 
 ## Error Response
 
-**Condition** : If you fail to search for anything like `https://midlanod.com/news/`.
+**Condition** : If you fail to search for anything like `https://midlands.robinhood.com/news/`.
 
 **Code** : `400 Bad Request`
 
@@ -1160,7 +1160,7 @@ Grab Bitcoin news by currency id `https://midlands.robinhood.com/news/?currency_
 }
 ```
 
-**Condition** : If you try pulling a page that doesn't exist like `https://midlanod.com/news/MSFT/?page=539`
+**Condition** : If you try pulling a page that doesn't exist like `https://midlands.robinhood.com/news/MSFT/?page=539`
 
 **Code** : `404 Not Found`
 

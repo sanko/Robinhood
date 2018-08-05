@@ -587,7 +587,7 @@ Here's the results for `https://midlands.robinhood.com/news/MSFT/`:
 
 ## Error Response
 
-**Condition** : If you fail to search for anything like `https://midlanod.com/news/`.
+**Condition** : If you fail to search for anything like `https://midlands.robinhood.com/news/`.
 
 **Code** : `400 Bad Request`
 
@@ -599,7 +599,7 @@ Here's the results for `https://midlands.robinhood.com/news/MSFT/`:
 }
 ```
 
-**Condition** : If you try pulling a page that doesn't exist like `https://midlanod.com/news/MSFT/?page=539`
+**Condition** : If you try pulling a page that doesn't exist like `https://midlands.robinhood.com/news/MSFT/?page=539`
 
 **Code** : `404 Not Found`
 

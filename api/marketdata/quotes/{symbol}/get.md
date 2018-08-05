@@ -23,7 +23,7 @@ This subdirectory holds current quote data about a particular security traded wi
 ```
 curl -v https://api.robinhood.com/marketdata/quotes/MSFT/ \
    -H "Accept: application/json"
-```   
+```
 
 ## Success Responses
 
@@ -50,7 +50,7 @@ curl -v https://api.robinhood.com/marketdata/quotes/MSFT/ \
   "last_trade_price_source": "consolidated",
   "updated_at": "2018-04-06T23:59:50Z",
   "instrument": "https://api.robinhood.com/instruments/50810c35-d215-4866-9758-0ada4ac79ffa/"
-} 
+}
 ```
 
 ## Error Response
