@@ -55,7 +55,7 @@ curl -v https://api.robinhood.com/instruments/ \
 
 **Code** : `200 OK`
 
-**Content example** : 
+**Content example** :
 
 Grab an instrument by symbol with something like `https://api.robinhood.com/instruments/?symbol=MSFT`:
 
