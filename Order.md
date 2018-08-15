@@ -70,7 +70,7 @@ Fields are returned as well as the following:
 | id                | String   | Internal id of this order |
 | cumulative_quantity | Float  | Number of shares which have executed so far |
 | reject_reason     | String   | |
-| state             | String   |  `queued`, `unconfirmed`, `confirmed`, `partially_filled`, `filled`, `rejected`, `canceled`, or `failed` |
+| state             | String   |  `queued`, `unconfirmed`, `confirmed`, `partially_filled`, `filled`, `rejected`, `cancelled`, or `failed` |
 | last_transaction_at | ISO 8601 | |
 | client_id         | String | |
 | url               | URL | Link to this order with up to date information |
