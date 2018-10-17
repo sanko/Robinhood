@@ -50,7 +50,7 @@ curl -v https://api.robinhood.com/fundamentals/?ids=50810c35-d215-4866-9758-0ada
 
 **Content example** :
 
-Grab a list of instruments' fundamental data by id in one call like `https://api.robinhood.com/instruments/?ids=50810c35-d215-4866-9758-0ada4ac79ffa,b060f19f-0d24-4bf2-bf8c-d57ba33993e5`:
+Grab a list of instruments' fundamental data by id in one call like `https://api.robinhood.com/fundamentals/?ids=50810c35-d215-4866-9758-0ada4ac79ffa,b060f19f-0d24-4bf2-bf8c-d57ba33993e5`:
 
 ```json
 {
