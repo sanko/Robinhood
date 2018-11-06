@@ -114,6 +114,7 @@ Options endpoints require an authorized client. Either old skool or OAuth will w
 
  - [Find out the maximum option level supported by your account](/api/options/suitability/get.md): `GET /options/suitability/`
  - [Gather paginated list of options chains](/api/options/chains/get.md): `GET /options/chains/`
+ - [Gather data for options chains by id](/api/options/chains/{optionsChainId}/get.md): `GET /options/chains/{optionsChainId}/`
  - [Gather paginated list of options instruments](/api/options/instruments/get.md): `GET /options/instruments/`
  - [Gather an options instrument by id](/api/options/instruments/{id}/get.md): `GET /options/instruments/{id}/`
  - [Gather paginated list of options positions](/api/options/positions/get.md): `POST /options/positions/`
