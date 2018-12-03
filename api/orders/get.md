@@ -3077,7 +3077,7 @@ curl -v https://api.robinhood.com/orders/ \
 
 **Code** : `401 Unauthorized`
 
-**Content example** : 
+**Content example** :
 
 ```json
 {

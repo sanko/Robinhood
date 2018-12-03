@@ -50,6 +50,7 @@ Table of Contents:
 ### Watchlists
 
  - [Gather list of watchlists](/api/watchlists/get.md): `GET /watchlists/`
+ - [Gather watchlist items](/api/watchlists/{name}/get.md): `GET /watchlists/{name}/`
 
 ## Authorization
 
