@@ -1,0 +1,1929 @@
+components:
+  headers:
+    Content-Type:
+      description: Possible values are application/json or application/text
+      required: true
+      schema:
+        enum:
+        - application/json
+        - application/text
+        example: application/json
+        type: string
+    Location:
+      description: Location of the created resource.
+      example: https://nummus.robinhood.com/halts/
+      required: true
+      schema:
+        type: string
+    X-Robinhood-API-Version:
+      description: API version of endpoint data
+      example: 1.258.9
+      required: true
+      schema:
+        type: string
+  parameters:
+    Authorization:
+      description: Is contained only if an OAuth2 based authentication was performed
+        in a pre-step or an OAuth2 based SCA was performed in the related consent
+        authorization.
+      example: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGxvd2VkX25vZGVzIjoiZmRhYWU1ODYtYWE1NS00MzJjLTQxODEtYjRiYzY2MDljNzQ2IiwiZXhwIjoxNTU4NTMyMTI0LCJvd25lciI6IjViMDQxYzljNDVmOTJlMGExNzdlOThjYyJ9.uif9dlFO8qEQGrLh9bThtT4H_sUeL43nfx0PL-RTgd5KL9WaO5TADLPIgBu02h2I39jRRb978ZYiv2xseAK8xpR13vz8cQUjIX0FpLnrKomfvl_nyzefVkcUH_DrNGkcPZswoVNFbfeUWER1c8I0fUudVsnxHExRJ_S-Lq1vWCSDChy89Vm_bliYdt8DppyELaBadFPqxeRRkn-szpr8sAvDgbb-OccT3LsiylkqJ5g4BWqj9qLpBO4xkzSTLjdKvgipRcNwv_dKOcwF3OI90TAaX1aEm856Zg1hBLrYnae1oceBfRYl7rjtDQo3S_R0j5pLhb7Kd-ErHec6nyaoOQ
+      in: header
+      name: Authorization
+      required: true
+      schema:
+        type: string
+    Content-Type:
+      description: Content-Type
+      example: application/json
+      in: header
+      name: Content-Type
+      required: true
+      schema:
+        enum:
+        - application/json
+        - application/text
+        - image/jpeg
+        - image/png
+        type: string
+    accountId:
+      description: Identification of the current account. It is used in the API structure
+        and certain endpoints require it be sent.
+      in: path
+      name: accountId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    activationId:
+      in: path
+      name: activationId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    active:
+      description: Requests that only active halts are returned.
+      in: query
+      name: active
+      required: false
+      schema:
+        type: boolean
+    currencyId:
+      in: path
+      name: currencyId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    currencyPairId:
+      in: path
+      name: currencyPairId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    cursorParam:
+      description: Pagination place holder
+      in: query
+      name: cursor
+      required: false
+      schema:
+        type: string
+    documentIdParam:
+      in: path
+      name: documentId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    haltId:
+      in: path
+      name: haltId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    holdingId:
+      in: path
+      name: holdingId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    id:
+      description: Instrument ID
+      example: 50810c35-d215-4866-9758-0ada4ac79ffa
+      in: path
+      name: id
+      required: true
+      schema:
+        format: uuid
+        type: string
+    nonzeroParam:
+      in: query
+      name: nonzero
+      required: false
+      schema:
+        type: boolean
+    orderIdParam:
+      in: path
+      name: orderId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    portfolioId:
+      in: path
+      name: portfolioId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    stateParam:
+      in: query
+      name: state
+      required: false
+      schema:
+        enum:
+        - uploaded
+        - pending
+        - retracted
+        type: string
+    watchlistId:
+      in: path
+      name: watchlistId
+      required: true
+      schema:
+        format: uuid
+        type: string
+    watchlistName:
+      description: Name of an equity watchlist
+      example: Default
+      in: path
+      name: watchlistName
+      required: true
+      schema:
+        type: string
+  responses:
+    400BadRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: Validation error occurred. This code will cover malformed syntax
+        in request or incorrect data in payload.
+    401Unauthorized:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: The user is not correctly authorized to perform the request. Retry
+        the request with correct authentication information.
+    403Forbidden:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: Returned if the resource that was referenced in the path exists
+        but cannot be accessed by the user. This code should only be used for non-sensitive
+        id references as it will reveal that the resource exists even though it cannot
+        be accessed.
+    404NotFound:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: Returned if the resource that was referenced in the path does not
+        exist or cannot be referenced by the user. When in doubt if a specific id
+        in the path is sensitive or not, use the HTTP response code 404 instead of
+        the HTTP response code 403.
+    405MethodNotAllowed:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: This code is only sent when the HTTP method (PUT, POST, DELETE,
+        GET etc.) is not supported on a specific endpoint. It has nothing to do with
+        the consent, payment or account information data model.
+    406NotAcceptable:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: The API server cannot generate the content that the user specified
+        in the Accept header.
+    408RequestTimeout:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: The server is still working correctly, but an individual request
+        has timed out.
+    415UnsupportedMedia:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: The user has supplied a media type which the API server does not
+        support.
+    429TooManyRequests:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: The user has exceeded the number of requests allowed and must obtain
+        a new authorization token.
+    500InternalServerError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: Internal server error occurred.
+    503ServiceUnavailable:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: The API server is currently unavailable. Generally, this is a temporary
+        state.
+    default:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HttpMessage'
+      description: Unexpected Error
+  schemas:
+    AccountDetails:
+      properties:
+        created_at:
+          format: date-time
+          type: string
+        id:
+          format: uuid
+          type: string
+        status:
+          type: string
+        status_reason_code:
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        user_id:
+          format: uuid
+          type: string
+    Activation:
+      properties:
+        created_at:
+          format: date-time
+          type: string
+        email:
+          format: email
+          type: string
+        external_rejection_code:
+          enum:
+          - equities_account_deactivated
+          - ineligible_jurisdiction
+          - ineligible_jurisdiction2
+          - ineligible_jurisdiction3
+          - user_information_mismatch
+          - no_equities_account
+          - other
+          - unsuitable
+          type: string
+        external_rejection_reason:
+          type: string
+        external_status_code:
+          enum:
+          - equities_account_deactivated
+          - ineligible_jurisdiction
+          - ineligible_jurisdiction2
+          - ineligible_jurisdiction3
+          - user_information_mismatch
+          - no_equities_account
+          - other
+          - unsuitable
+          type: string
+        first_name:
+          type: string
+        id:
+          format: uuid
+          type: string
+        last_name:
+          type: string
+        speculative:
+          type: boolean
+        state:
+          enum:
+          - approved
+          - rejected
+          - in_review
+          type: string
+        type:
+          enum:
+          - new_account
+          - reactivation
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        user_id:
+          format: uuid
+          type: string
+    ActivationRequest:
+      properties:
+        speculative:
+          nullable: true
+          type: boolean
+        type:
+          enum:
+          - new_account
+          - reactivation
+          type: string
+    CreateWatchlistRequest:
+      properties:
+        currency_pair_ids:
+          description: List of UUIDs
+          items:
+            format: uuid
+            type: string
+          nullable: false
+          type: array
+        name:
+          nullable: false
+          type: string
+    Currency:
+      properties:
+        brand_color:
+          description: This is a hex color code used for display.
+          type: string
+        code:
+          description: Short name of the currency for display.
+          type: string
+        id:
+          format: uuid
+          type: string
+        increment:
+          type: number
+        name:
+          description: Longer name of the currency for display.
+          type: string
+        type:
+          enum:
+          - cryptocurrency
+          - fiat
+          type: string
+    CurrencyPair:
+      properties:
+        asset_currency:
+          $ref: '#/components/schemas/Currency'
+        display_only:
+          type: boolean
+        id:
+          format: uuid
+          type: string
+        max_order_size:
+          type: number
+        min_order_price_increment:
+          type: number
+        min_order_quantity_increment:
+          type: number
+        min_order_size:
+          type: number
+        name:
+          type: string
+        quote_currency:
+          $ref: '#/components/schemas/Currency'
+        symbol:
+          type: string
+        tradability:
+          $ref: '#/components/schemas/CurrencyTradability'
+    CurrencyTradability:
+      enum:
+      - tradable
+      - untradable
+      - buy_only
+      - sell_only
+    Holding:
+      properties:
+        cost_bases:
+          items:
+            $ref: '#/components/schemas/HoldingCostBasis'
+          type: array
+        currency:
+          $ref: '#/components/schemas/Currency'
+        id:
+          format: uuid
+          type: string
+        quantity:
+          type: number
+        quantity_available:
+          type: number
+        quantity_held_for_buy:
+          type: number
+        quantity_held_for_sell:
+          type: number
+    HoldingCostBasis:
+      properties:
+        currency_id:
+          format: uuid
+          type: string
+        direct_cost_basis:
+          type: number
+        direct_quantity:
+          type: number
+        id:
+          format: uuid
+          type: string
+        intraday_cost_basis:
+          type: number
+        intraday_quantity:
+          type: number
+        marked_cost_basis:
+          type: number
+        marked_quantity:
+          type: number
+    HttpMessage:
+      properties:
+        category:
+          enum:
+          - WARNING
+          - ERROR
+          example: ERROR
+          type: string
+        code:
+          $ref: '#/components/schemas/MessageCode'
+        path:
+          type: string
+        text:
+          example: additional text information of the ASPSP up to 512 characters
+          maxLength: 512
+          type: string
+      required:
+      - category
+      - code
+      - text
+      type: object
+    MessageCode:
+      enum:
+      - CERTIFICATE_INVALID
+      - CERTIFICATE_EXPIRED
+      - CERTIFICATE_BLOCKED
+      - CERTIFICATE_REVOKED
+      - CERTIFICATE_MISSING
+      - SIGNATURE_INVALID
+      - SIGNATURE_MISSING
+      - FORMAT_ERROR
+      - PARAMETER_NOT_SUPPORTED
+      - PSU_CREDENTIALS_INVALID
+      - SERVICE_INVALID
+      - SERVICE_BLOCKED
+      - CORPORATE_ID_INVALID
+      - CONSENT_UNKNOWN
+      - CONSENT_INVALID
+      - CONSENT_EXPIRED
+      - TOKEN_UNKNOWN
+      - TOKEN_INVALID
+      - TOKEN_EXPIRED
+      - RESOURCE_UNKNOWN
+      - RESOURCE_EXPIRED
+      - TIMESTAMP_INVALID
+      - PERIOD_INVALID
+      - SCA_METHOD_UNKNOWN
+      - PRODUCT_INVALID
+      - PRODUCT_UNKNOWN
+      - PAYMENT_FAILED
+      - REQUIRED_KID_MISSING
+      - EXECUTION_DATE_INVALID
+      - SESSIONS_NOT_SUPPORTED
+      - ACCESS_EXCEEDED
+      - REQUESTED_FORMATS_INVALID
+      - CARD_INVALID
+      - NO_PIIS_ACTIVATION
+      example: TOKEN_INVALID
+      type: string
+    Order:
+      properties:
+        account_id:
+          format: uuid
+          type: string
+        cancel_url:
+          format: url
+          nullable: true
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        cumulative_quantity:
+          type: number
+        currency_pair_id:
+          format: uuid
+          type: string
+        executions:
+          items:
+            $ref: '#/components/schemas/OrderExecution'
+          type: array
+        id:
+          format: uuid
+          type: string
+        last_transaction_at:
+          format: date-time
+          type: string
+        price:
+          type: number
+        quantity:
+          type: number
+        ref_id:
+          format: uuid
+          type: string
+        side:
+          enum:
+          - buy
+          - sell
+          type: string
+        state:
+          description: Current state of the order.
+          enum:
+          - canceled
+          - rejected
+          - filled
+          - queued
+          - unconfirmed
+          example: canceled
+          type: string
+        time_in_force:
+          description: Indicates how long an order will be kept active.
+          enum:
+          - ioc
+          - gtc
+        type:
+          enum:
+          - market
+          - limit
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+    OrderExecution:
+      properties:
+        effective_price:
+          type: number
+        id:
+          format: uuid
+          type: string
+        quantity:
+          type: number
+        timestamp:
+          format: date-time
+          type: string
+    OrderRequest:
+      properties:
+        currency_pair_id:
+          format: uuid
+          type: string
+        price:
+          type: number
+        quantity:
+          type: number
+        ref_id:
+          format: uuid
+          type: string
+        side:
+          enum:
+          - buy
+          - sell
+          type: string
+        time_in_force:
+          enum:
+          - ioc
+          - gtc
+          type: string
+        type:
+          enum:
+          - market
+          - limit
+          type: string
+    OrderSpeculative:
+      properties:
+        transfers:
+          items:
+            $ref: '#/components/schemas/Transfer'
+          type: array
+    PatchWatchlistRequest:
+      properties:
+        currency_pair_ids:
+          description: List of UUIDs
+          items:
+            format: uuid
+            type: string
+          nullable: false
+          type: array
+    Portfolio:
+      properties:
+        account_id:
+          format: uuid
+          type: string
+        equity:
+          type: number
+        extended_hours_equity:
+          type: number
+        extended_hours_market_value:
+          type: number
+        id:
+          format: uuid
+          type: string
+        market_value:
+          type: number
+        previous_close:
+          type: number
+        updated_at:
+          format: date-time
+          type: string
+    ResidencyDocument:
+      properties:
+        back_image_data:
+          format: binary
+          nullable: true
+          type: string
+        created_at:
+          format: date-time
+          nullable: false
+          type: string
+        document_type:
+          enum:
+          - driving_license
+          - passport
+          - state_id
+          nullable: false
+          type: string
+        front_image_data:
+          format: binary
+          type: string
+        id:
+          format: uuid
+          type: string
+        state:
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+        user_id:
+          format: uuid
+          type: string
+        validation_status:
+          type: string
+    TradigHalt:
+      properties:
+        active:
+          type: boolean
+        currency_pair_id:
+          format: uuid
+          type: string
+        end_at:
+          format: date-time
+          type: string
+        id:
+          format: uuid
+          type: string
+        reason:
+          type: string
+        reason_code:
+          enum:
+          - other
+          - outage
+          - scheduled_maintenance
+          type: string
+        start_at:
+          format: date-time
+          type: string
+        state:
+          enum:
+          - full
+          - buy_only
+          - sell_only
+          - queued
+          type: string
+    Transfer:
+      properties:
+        amount:
+          type: number
+        direction:
+          enum:
+          - incoming
+          - outgoing
+          type: string
+    Watchlist:
+      properties:
+        currency_pair_ids:
+          description: List of UUIDs
+          items:
+            format: uuid
+            type: string
+          nullable: false
+          type: array
+        id:
+          description: UUID of this watchlist
+          format: uuid
+          nullable: false
+          type: string
+        name:
+          nullable: false
+          type: string
+  securitySchemes:
+    Oauth2:
+      description: Use a global client_id / client_secret and your username / password
+        combo to obtain a token
+      flows:
+        password:
+          refreshUrl: /oauth/token/refresh
+          scopes:
+            read: ''
+            write: ''
+          tokenUrl: /oauth/token
+      type: oauth2
+info:
+  contact:
+    url: http://github.com/sanko/robinhood/
+  description: API to trade Options contracts, equity instruments, and cryptocurrency
+    without any fees or commission.
+  license:
+    name: The Unlicense
+    url: http://unlicense.org
+  termsOfService: http://robinhood.com/legal/
+  title: Robinhood
+  version: 1.0.0
+openapi: 3.0.2
+paths:
+  /accounts/:
+    get:
+      description: Reads a list of forex accounts.
+      operationId: getAccounts
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: Returns a paginated list of accounts. ...which is
+                      actually a list of one
+                    items:
+                      $ref: '#/components/schemas/AccountDetails'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: list of accounts
+      tags:
+      - account
+      - forex
+  /accounts/{accountId}/:
+    get:
+      description: Reads a Forex account by id.
+      operationId: getAccount
+      parameters:
+      - $ref: '#/components/parameters/accountId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDetails'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: forex account
+      tags:
+      - account
+      - forex
+  /activations/:
+    get:
+      description: Reads a paginated list of forex account applications.
+      operationId: fetchActivations
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of activations/applications.
+                    items:
+                      $ref: '#/components/schemas/Activation'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency account activations
+      tags:
+      - forex
+      - account
+    post:
+      description: Apply to activate a new account
+      operationId: createActivation
+      parameters:
+      - $ref: '#/components/schemas/ActivationRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activation'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - write
+      summary: activate forex account
+      tags:
+      - forex
+  /activations/{activationId}/:
+    get:
+      description: Reads a single forex account activation.
+      operationId: fetchActivationById
+      parameters:
+      - $ref: '#/components/parameters/activationId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activation'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency activation
+      tags:
+      - forex
+      - account
+  /currencies/:
+    get:
+      description: Reads a paginated list of forex currencies.
+      operationId: fetchCurrencies
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of currencies.
+                    items:
+                      $ref: '#/components/schemas/Currency'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currencies
+      tags:
+      - forex
+  /currencies/{currencyId}/:
+    get:
+      description: Reads a paginated list of forex currencies.
+      operationId: fetchCurrency
+      parameters:
+      - $ref: '#/components/parameters/currencyId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currencies
+      tags:
+      - forex
+  /currency_pairs/:
+    get:
+      description: Reads a paginated list of forex currency pairs.
+      operationId: fetchCurrencyPairs
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of currency pairs.
+                    items:
+                      $ref: '#/components/schemas/CurrencyPair'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency pairs
+      tags:
+      - forex
+  /currency_pairs/{currencyId}/:
+    get:
+      description: Reads a single forex currency pair by its id.
+      operationId: fetchCurrencyPair
+      parameters:
+      - $ref: '#/components/parameters/currencyId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency
+      tags:
+      - forex
+  /halts/:
+    get:
+      description: Reads a list of Forex/Crypto halts.
+      operationId: fetchCurrencyPairTradingHalts
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      - $ref: '#/components/parameters/active'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: Returns a paginated list of trading halts.
+                    items:
+                      $ref: '#/components/schemas/TradigHalt'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: list of forex halts
+      tags:
+      - forex
+  /halts/{haltId}/:
+    get:
+      description: Reads a single of Forex/Crypto halts.
+      operationId: fetchCurrencyPairTradingHalt
+      parameters:
+      - $ref: '#/components/parameters/haltId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TradigHalt'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: list of forex halts
+      tags:
+      - forex
+  /holdings/:
+    get:
+      description: Reads a paginated list of forex holdings.
+      operationId: fetchHoldings
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      - $ref: '#/components/parameters/nonzeroParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of holdings.
+                    items:
+                      $ref: '#/components/schemas/Holding'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency holdings
+      tags:
+      - forex
+      - account
+  /holdings/{holdingId}/:
+    get:
+      description: Reads a single forex holdings.
+      operationId: fetchHolding
+      parameters:
+      - $ref: '#/components/parameters/holdingId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Holding'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency holdings
+      tags:
+      - forex
+      - account
+  /orders/:
+    get:
+      description: Reads a paginated list of forex orders.
+      operationId: fetchOrders
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of orders.
+                    items:
+                      $ref: '#/components/schemas/Order'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency order
+      tags:
+      - forex
+    post:
+      description: Places a new forex order.
+      operationId: placeOrder
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: place currency order
+      tags:
+      - forex
+  /orders/speculative/:
+    get:
+      description: Reads a paginated list of forex orders.
+      operationId: fetchOrdersSpeculative
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of orders.
+                    items:
+                      $ref: '#/components/schemas/OrderSpeculative'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency order
+      tags:
+      - forex
+    post:
+      operationId: placeOrderSpeculative
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+        description: Places a new forex order.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderSpeculative'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: place currency order
+      tags:
+      - forex
+  /orders/{orderId}/:
+    get:
+      description: Reads a forex order.
+      operationId: fetchOrder
+      parameters:
+      - $ref: '#/components/parameters/orderIdParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency order
+      tags:
+      - forex
+  /orders/{orderId}/cancel/:
+    post:
+      description: Cancels a forex order.
+      operationId: cancelOrder
+      parameters:
+      - $ref: '#/components/parameters/orderIdParam'
+      responses:
+        '200':
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: cancel currency order
+      tags:
+      - forex
+  /portfolios/:
+    get:
+      description: Reads a paginated list of forex portfolios.
+      operationId: fetchPortfolios
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of portfolios.
+                    items:
+                      $ref: '#/components/schemas/Portfolio'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency portfolio
+      tags:
+      - forex
+      - account
+  /portfolios/{portfolioId}/:
+    get:
+      description: Reads a forex portfolio.
+      operationId: fetchPortfolio
+      parameters:
+      - $ref: '#/components/parameters/portfolioId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Portfolio'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency portfolio
+      tags:
+      - forex
+      - account
+  /residency_documents/:
+    get:
+      description: Reads a paginated list of forex account applications.
+      operationId: fetchResidencyDocs
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      - $ref: '#/components/parameters/stateParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: A list of activations/applications.
+                    items:
+                      $ref: '#/components/schemas/ResidencyDocument'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency account activations
+      tags:
+      - forex
+      - account
+    post:
+      description: Upload residency documentation.
+      operationId: uploadResidencyDocs
+      parameters:
+      - $ref: '#/components/schemas/ResidencyDocument'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResidencyDocument'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - write
+      summary: verify residency
+      tags:
+      - forex
+  /residency_documents/{documentId}/:
+    get:
+      description: Reads a single forex account residency documentation upload.
+      operationId: fetchResidencyDocsById
+      parameters:
+      - $ref: '#/components/parameters/documentIdParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResidencyDocument'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+      summary: currency activation
+      tags:
+      - forex
+      - account
+  /residency_documents/{documentId}/upload/:
+    post:
+      description: Uploads the photo id for verifying residency.
+      operationId: uploadResidencyDocsById
+      parameters:
+      - $ref: '#/components/parameters/documentIdParam'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                documentType:
+                  type: string
+                front:
+                  format: binary
+                  type: string
+                id:
+                  format: uuid
+                  type: string
+              type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResidencyDocument'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - write
+      summary: currency activation
+      tags:
+      - forex
+      - account
+  /watchlists/:
+    get:
+      description: Reads a list of forex watchlists.
+      operationId: fetchWatchlists
+      parameters:
+      - $ref: '#/components/parameters/cursorParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  results:
+                    description: Returns a paginated list of forex watchlists. ...which
+                      is actually a list of one for 99.9999999999% percent of people.
+                    items:
+                      $ref: '#/components/schemas/Watchlist'
+                    type: array
+                required:
+                - results
+                type: object
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+        - watchlist
+      summary: list of equity watchlists
+      tags:
+      - watchlist
+    post:
+      description: Creates a new forex watchlist.
+      operationId: createWatchlist
+      parameters:
+      - $ref: '#/components/schemas/CreateWatchlistRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Watchlist'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+        - watchlist
+      summary: list of equity watchlists
+      tags:
+      - watchlist
+  /watchlists/{watchlistId}/:
+    get:
+      description: Returs an individual forex watchlist.
+      operationId: getWatchlist
+      parameters:
+      - $ref: '#/components/parameters/watchlistId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Watchlist'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - read
+        - watchlist
+      summary: watchlist
+      tags:
+      - watchlist
+    patch:
+      description: Sets the entire list of currency pairs in a forex watchlist.
+      operationId: patchWatchlist
+      parameters:
+      - $ref: '#/components/parameters/watchlistId'
+      - $ref: '#/components/schemas/PatchWatchlistRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Watchlist'
+          description: OK
+          headers:
+          - $ref: '#/components/headers/X-Robinhood-API-Version'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+      - OAuth2:
+        - write
+        - watchlist
+      summary: watchlist
+      tags:
+      - watchlist
+servers:
+- description: Forex API
+  url: https://nummus.robinhood.com
+tags:
+- description: Operations about user
+  name: user
+- description: Cryptocurrency and Forex
+  name: forex
