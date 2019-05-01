@@ -1,3 +1,16 @@
+# NOTICE: **Consider this project dead.**
+
+I continued to keep this documentation up to date and it's now complete locally and until recently, I was happy to answer questions that wouldn't potentially expose a private, internal API, unreleased feature, or sensitive 3rd party data. But certain ones here have moved from friendly open source devs to angry, weird stalkers and have even used this documentation maliciously to steal assets and hijack accounts. Sadly, closing the issue tracker was only a temporary fix. Shuttering the project will be more permanent.
+
+To the weird ones: Do not contact me about Robinhood. Do not send any more email. Do not text me. Do not call me anymore. Do not cyberstalk my teenage family member and leave messages for me on her voicemail anymore. Stop offering money to help you. **I will not.**
+
+To everyone else: Bad actors, profiteers, and scammers have created a situation that puts us all at risk of having our accounts closed. I suggest you find ways to distance yourselves. These people have pushed Robinhood into making drastic changes to their API, shutting down established partnerships, and enforcing their customer agreements. If you haven't been contacted by an automated support agent yet for using the API directly, don't be too surprised if you are in the near future.
+
+I'm not sure what will happen to this repo yet but I have had a good relationship with RH HQ since there was a waiting list to even create an account and I intend to stay in their good graces. I will not plug one here but commission-free firms exist that are designed to be accessed via their API. If that's in line with your plans, use one of those firms.
+
+-------
+
+
 # **NOTICE: I do not need pull requests or other contributions of end~o~points!
 
 # Unofficial Documentation of Robinhood Trade's Private API
