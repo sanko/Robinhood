@@ -11,7 +11,7 @@ I'm not sure what will happen to this repo yet but I have had a good relationshi
 -------
 
 
-# **NOTICE: I do not need pull requests or other contributions of end~o~points!
+# **NOTICE: I do not need pull requests or other contributions of endpoints!
 
 # Unofficial Documentation of Robinhood Trade's Private API
 
