@@ -9,7 +9,7 @@
 
 | URI                                      | HTTP Method | Authentication |
 |------------------------------------------|-------------|----------------|
-| api.robinhood.com/fundamentals/{symbol}/ | GET         | No             |
+| api.robinhood.com/fundamentals/{symbol}/ | GET         | YES            |
 
 **Fields**
 
@@ -69,7 +69,7 @@ You can gather data for a list of symbols at once by handing the bare `/fundamen
 
 | URI                            | HTTP Method | Authentication |
 |--------------------------------|-------------|----------------|
-| api.robinhood.com/fundamentals/ | GET         | No             |
+| api.robinhood.com/fundamentals/ | GET         | YES             |
 
 **Fields**
 
