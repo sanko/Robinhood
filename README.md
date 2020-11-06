@@ -1,3 +1,7 @@
+# News
+
+https://www.quantopian.com/posts/were-joining-robinhood
+
 # NOTICE: **Consider this project dead.**
 
 I continued to keep this documentation up to date and it's now complete locally and until recently, I was happy to answer questions that wouldn't potentially expose a private, internal API, unreleased feature, or sensitive 3rd party data. But certain ones here have moved from friendly open source devs to angry, weird stalkers and have even used this documentation maliciously to steal assets and hijack accounts. Sadly, closing the issue tracker was only a temporary fix. Shuttering the project will be more permanent.
